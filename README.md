@@ -1,6 +1,8 @@
 # BlexoWebFront
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.7.
+# v.01 tag
+
+Plataforma de frontend web para la estancia de investigación: ESTUDIO DE RELACIÓN ENTRE ESTADOS EMOCIONALES CON MANEJO Y MANIUPLACIÓN DE OBJETOS DE LA VIDA DIARIA EN INDIVIDUOS CON TRASTORNO DEL ESPECTRO AUTISTA.
 
 ## Development server
 
