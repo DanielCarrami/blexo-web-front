@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "blexo-web-front"
+    }
+  },
+  "defaultProject": "blexo-web-front",
+  "cli": {
+    "analytics": false
+  }
 }
