@@ -6,10 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ver-sesion.component.scss']
 })
 export class VerSesionComponent implements OnInit {
-
+  descripcion = "descripcion generica"
   constructor() { }
 
   ngOnInit(): void {
+
+    
   }
 
 }
