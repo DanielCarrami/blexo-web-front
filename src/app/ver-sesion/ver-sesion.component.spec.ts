@@ -2,6 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { VerSesionComponent } from './ver-sesion.component';
 
+import {MatDialogModule} from '@angular/material/dialog';
 describe('VerSesionComponent', () => {
   let component: VerSesionComponent;
   let fixture: ComponentFixture<VerSesionComponent>;
