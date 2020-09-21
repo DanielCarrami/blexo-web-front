@@ -9,7 +9,7 @@ import { ChartsModule } from 'ng2-charts';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { EditarSesionComponent } from './editar-sesion/editar-sesion.component';
 import {MatFormField, MatFormFieldModule} from '@angular/material/form-field';
-
+import {MatInputModule} from '@angular/material/input';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,10 +22,12 @@ import {MatFormField, MatFormFieldModule} from '@angular/material/form-field';
     ChartsModule,
     MatDialogModule,
     BrowserAnimationsModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatInputModule
+  
     
   ],
-  entryComponents:[EditarSesionComponent],
+  entryComponents:[EditarSesionComponent, VerSesionComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

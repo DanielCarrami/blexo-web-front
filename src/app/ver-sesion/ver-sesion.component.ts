@@ -33,7 +33,7 @@ export class VerSesionComponent implements OnInit {
   public barChartLabels: Label[] = ['2006', '2007'];
   public barChartType: ChartType = 'bar';
   public barChartLegend = true;
- 
+  
 
   public barChartData: ChartDataSets[] = [
     { data: [50, 59], label: 'Exitos' },

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {MatFormFieldModule} from '@angular/material/form-field';
 
 @Component({
   selector: 'app-editar-sesion',
@@ -8,16 +7,9 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 })
 export class EditarSesionComponent implements OnInit {
 
-  firstNameAutofilled: boolean;
-  lastNameAutofilled: boolean;
   constructor() { }
 
   ngOnInit(): void {
-  }
-
-  editor(){}
-
-  clicking(){
   }
 
 }
