@@ -26,10 +26,12 @@
         <p class = "font-descripcion-principal"><br> {{descripcion}}</p>
     </div>
 
+
+    
     <!--Chart-->
-    <div >
+    <div class="graph-container">
         <div style="display: block">
-          <canvas baseChart height="50px" width ="600"
+          <canvas baseChart height="200px" width ="600"
             [datasets]="barChartData"
             [labels]="barChartLabels"
             [options]="barChartOptions"
@@ -37,8 +39,15 @@
             [chartType]="barChartType">
           </canvas>
         </div>
-        <button mat-button mat-raised-button color="primary" (click)="randomize()">Update</button>
     </div>
+
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
 
     <div class="news-container">
         <div>
@@ -69,5 +78,15 @@
             <br>
         </div>
     </div>
+
+
+    <div class="news-container">
+         <button mat-raised-button (click)="popup()" class="button" style="float:center" color="accent">Aplicar cambios</button>
+    </div>
+
+
+    <br>
+       
+    
 
 </div>
