@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ChartOptions, ChartType, ChartDataSets } from 'chart.js';
 import { Label } from 'ng2-charts';
+import {MatDialog,MatDialogConfig} from '@angular/material/dialog';
+import { EditarSesionComponent } from '../editar-sesion/editar-sesion.component';
 
 @Component({
   selector: 'app-ver-sesion',
@@ -39,11 +41,9 @@ export class VerSesionComponent implements OnInit {
   ];
 
 
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit(): void {
-
-    
   }
 
   // events
@@ -67,5 +67,15 @@ export class VerSesionComponent implements OnInit {
       40];
     this.barChartData[0].data = data;
   }
+
+  popup(){
+    const dialogRef = this.dialog.open(EditarSesionComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+
+  }
+  
 
 }
