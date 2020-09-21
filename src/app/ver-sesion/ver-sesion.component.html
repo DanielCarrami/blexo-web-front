@@ -26,10 +26,12 @@
         <p class = "font-descripcion-principal"><br> {{descripcion}}</p>
     </div>
 
+
+    
     <!--Chart-->
-    <div >
+    <div class="graph-container">
         <div style="display: block">
-          <canvas baseChart height="50px" width ="600"
+          <canvas baseChart height="200px" width ="600"
             [datasets]="barChartData"
             [labels]="barChartLabels"
             [options]="barChartOptions"
@@ -38,6 +40,14 @@
           </canvas>
         </div>
     </div>
+
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
 
     <div class="news-container">
         <div>
