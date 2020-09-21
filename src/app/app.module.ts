@@ -10,11 +10,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { EditarSesionComponent } from './editar-sesion/editar-sesion.component';
 import {MatFormField, MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
+import { CrearSesionComponent } from './crear-sesion/crear-sesion.component';
 @NgModule({
   declarations: [
     AppComponent,
     VerSesionComponent,
-    EditarSesionComponent
+    EditarSesionComponent,
+    CrearSesionComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +29,7 @@ import {MatInputModule} from '@angular/material/input';
   
     
   ],
-  entryComponents:[EditarSesionComponent, VerSesionComponent],
+  entryComponents:[EditarSesionComponent, VerSesionComponent, CrearSesionComponent],
   providers: [],
   bootstrap: [AppComponent]
 })
