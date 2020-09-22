@@ -9,6 +9,8 @@ import { ChartsModule } from 'ng2-charts';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { EditarSesionComponent } from './editar-sesion/editar-sesion.component';
 import {MatFormField, MatFormFieldModule} from '@angular/material/form-field';
+
+import { MatToolbarModule } from '@angular/material/toolbar';
 import {MatInputModule} from '@angular/material/input';
 import { CrearSesionComponent } from './crear-sesion/crear-sesion.component';
 import { HeaderComponent } from './core/header/header.component';
@@ -27,8 +29,8 @@ import { HeaderComponent } from './core/header/header.component';
     MatDialogModule,
     BrowserAnimationsModule,
     MatFormFieldModule,
-    MatInputModule
-  
+    MatInputModule,
+    MatToolbarModule,
     
   ],
   entryComponents:[EditarSesionComponent, VerSesionComponent, CrearSesionComponent],
