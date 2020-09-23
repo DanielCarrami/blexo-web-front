@@ -23,6 +23,7 @@ import { HeaderComponent } from './core/header/header.component';
     VerSesionComponent,
     EditarSesionComponent,
     CrearSesionComponent,
+    InicioSesionComponent,
     RegistroComponent,
     InicioSesionComponent,
     HeaderComponent
