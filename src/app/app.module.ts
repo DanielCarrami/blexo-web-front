@@ -4,6 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ExperimentoViewComponent } from './experimento-view/experimento-view.component';
 import { ExperimentoEditComponent} from './experimento-view/experimento-edit.component';
+import { ExperimentoCreateComponent} from './experimento-view/experimento-create.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule} from '@angular/material/card';
 import {MatGridListModule} from '@angular/material/grid-list';
@@ -18,7 +19,8 @@ import {MatIconModule} from '@angular/material/icon';
   declarations: [
     AppComponent,
     ExperimentoViewComponent,
-    ExperimentoEditComponent
+    ExperimentoEditComponent,
+    ExperimentoCreateComponent
 
   ],
   imports: [
