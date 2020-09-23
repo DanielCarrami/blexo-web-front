@@ -11,8 +11,8 @@ describe('VerSesionComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [ MatDialogModule ],
-      declarations: [ VerSesionComponent ]
+      imports: [  ],
+      declarations: [  ]
     })
     .compileComponents();
   }));
