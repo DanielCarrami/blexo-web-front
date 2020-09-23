@@ -13,12 +13,14 @@ import { CreateProjectComponent } from './create-project/create-project.componen
 import {MatDialogModule} from '@angular/material/dialog';
 import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
+import { EditProjectComponent } from './edit-project/edit-project.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProjectViewComponent,
-    CreateProjectComponent
+    CreateProjectComponent,
+    EditProjectComponent
   ],
   imports: [
     BrowserModule,

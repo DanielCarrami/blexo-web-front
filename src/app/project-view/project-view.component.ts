@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CreateProjectComponent } from '../create-project/create-project.component';
 import { MatDialog } from '@angular/material/dialog';
+import { EditProjectComponent } from '../edit-project/edit-project.component';
 
 @Component({
   selector: 'app-project-view',
@@ -15,6 +16,12 @@ export class ProjectViewComponent implements OnInit {
   }
   nuevoProyecto(): void{
     this.dialog.open(CreateProjectComponent, {
+      width: '450px'
+    });
+  }
+
+  editarProyecto(): void{
+    this.dialog.open(EditProjectComponent, {
       width: '450px'
     });
   }
