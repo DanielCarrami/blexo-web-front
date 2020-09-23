@@ -6,7 +6,8 @@ import { EditProjectComponent } from '../edit-project/edit-project.component';
 @Component({
   selector: 'app-project-view',
   templateUrl: './project-view.component.html',
-  styleUrls: ['./project-view.component.scss']
+  styleUrls: ['./project-view.component.scss'],
+  providers: [MatDialog]
 })
 export class ProjectViewComponent implements OnInit {
 
