@@ -9,11 +9,16 @@ import { MatTableModule } from '@angular/material/table';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatDividerModule } from '@angular/material/divider';
+import { CreateProjectComponent } from './create-project/create-project.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { FormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProjectViewComponent
+    ProjectViewComponent,
+    CreateProjectComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +27,10 @@ import { MatDividerModule } from '@angular/material/divider';
     MatTableModule,
     MatCardModule,
     MatGridListModule,
-    MatDividerModule
+    MatDividerModule,
+    MatDialogModule,
+    FormsModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
