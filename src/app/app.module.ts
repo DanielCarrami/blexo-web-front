@@ -13,9 +13,8 @@ import {MatIconModule} from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import {MatInputModule} from '@angular/material/input';
 import { CrearSesionComponent } from './crear-sesion/crear-sesion.component';
-
+import { InicioSesionComponent } from './inicio-sesion/inicio-sesion.component';
 import { RegistroComponent } from './registro/registro.component';
-
 import { HeaderComponent } from './core/header/header.component';
 
 @NgModule({
@@ -25,6 +24,7 @@ import { HeaderComponent } from './core/header/header.component';
     EditarSesionComponent,
     CrearSesionComponent,
     RegistroComponent,
+    InicioSesionComponent,
     HeaderComponent
   ],
   imports: [
