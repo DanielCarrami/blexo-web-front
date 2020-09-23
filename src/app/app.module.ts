@@ -13,7 +13,6 @@ import { MatDividerModule } from '@angular/material/divider';
 import { CreateProjectComponent } from './create-project/create-project.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { FormsModule } from '@angular/forms';
-import { MatInputModule } from '@angular/material/input';
 
 import { VerSesionComponent } from './ver-sesion/ver-sesion.component';
 import { ChartsModule } from 'ng2-charts';
@@ -44,16 +43,14 @@ import { HeaderComponent } from './core/header/header.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    FormsModule,
+    ChartsModule,
+    BrowserAnimationsModule,
     MatTableModule,
     MatCardModule,
     MatGridListModule,
     MatDividerModule,
     MatDialogModule,
-    FormsModule,
-    MatInputModule,
-    ChartsModule,
-    MatDialogModule,
-    BrowserAnimationsModule,
     MatFormFieldModule,
     MatInputModule,
     MatToolbarModule,
