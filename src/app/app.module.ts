@@ -11,12 +11,14 @@ import { EditarSesionComponent } from './editar-sesion/editar-sesion.component';
 import {MatFormField, MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import { CrearSesionComponent } from './crear-sesion/crear-sesion.component';
+import { InicioSesionComponent } from './inicio-sesion/inicio-sesion.component';
 @NgModule({
   declarations: [
     AppComponent,
     VerSesionComponent,
     EditarSesionComponent,
-    CrearSesionComponent
+    CrearSesionComponent,
+    InicioSesionComponent
   ],
   imports: [
     BrowserModule,

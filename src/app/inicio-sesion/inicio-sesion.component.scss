@@ -1,0 +1,40 @@
+
+body {
+  font-family: Roboto, Arial, sans-serif;
+  margin: 0;
+}
+.top-container{
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  top:50px;
+  left: 45%;
+}
+
+
+.email-container {
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  top:150px;
+  left: 35%;
+  width: 500px;
+  height: 200px;
+
+}
+.password-container{
+  padding: 0;
+  margin: 0;
+  position: relative;
+  top: 250px;
+  left: 39%;
+  width: 500px;
+  height: 200px;
+}
+.btn{
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  top: 330px;
+  left: 45%;
+}
