@@ -4,9 +4,15 @@ import { NgModule } from '@angular/core';
 import {MatDialog, MatDialogModule} from '@angular/material/dialog';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ProjectViewComponent } from './project-view/project-view.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatTableModule } from '@angular/material/table';
+import { MatCardModule } from '@angular/material/card';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatDividerModule } from '@angular/material/divider';
+
 import { VerSesionComponent } from './ver-sesion/ver-sesion.component';
 import { ChartsModule } from 'ng2-charts';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { EditarSesionComponent } from './editar-sesion/editar-sesion.component';
 import {MatFormField, MatFormFieldModule} from '@angular/material/form-field';
 import {MatIconModule} from '@angular/material/icon';
@@ -17,9 +23,11 @@ import { InicioSesionComponent } from './inicio-sesion/inicio-sesion.component';
 import { RegistroComponent } from './registro/registro.component';
 import { HeaderComponent } from './core/header/header.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
+    ProjectViewComponent,
     VerSesionComponent,
     EditarSesionComponent,
     CrearSesionComponent,
@@ -30,6 +38,11 @@ import { HeaderComponent } from './core/header/header.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
+    MatTableModule,
+    MatCardModule,
+    MatGridListModule,
+    MatDividerModule,
     ChartsModule,
     MatDialogModule,
     BrowserAnimationsModule,
