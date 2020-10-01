@@ -9,12 +9,7 @@ const routes: Routes = [
   {path: 'versesion', component: VerSesionComponent},
   {path: 'iniciosesion', component: InicioSesionComponent},
   {path: 'versesion', component: VerSesionComponent},
-  {path: 'registro', component: RegistroComponent},
-<<<<<<< HEAD
-  {path: 'iniciosesion', component: InicioSesionComponent},
-=======
-
->>>>>>> 663c62bc8a4a7fc5f2e93205d699eccff31232c6
+  {path: 'registro', component: RegistroComponent}
 ];
 
 @NgModule({
