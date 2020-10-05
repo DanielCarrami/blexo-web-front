@@ -9,12 +9,12 @@ import { FormControl, FormBuilder, Validators } from '@angular/forms';
 export class EditarUsuarioComponent implements OnInit {
   name = new FormControl('', [Validators.required, Validators.pattern((/^[a-zA-Z]*$/))]);
   lastname = new FormControl('', [Validators.required, Validators.pattern((/^[a-zA-Z]*$/))  ]);
-  // phone = new FormControl('', [Validators.required, Validators.pattern((/^((\\+91-?)|0)?[0-9]{10}$/))]);
+   phone = new FormControl('', [Validators.required, Validators.pattern((/^((\\+91-?)|0)?[0-9]{10}$/))]);
   // password = new FormControl('', [Validators.required]);
   // confirmpassword = new FormControl('', [Validators.required]);
 
 
-  // email = new FormControl('', [Validators.required, Validators.email]);
+   email = new FormControl('', [Validators.required, Validators.email]);
   // hide = true;
   // hideconfirm = true;
 
@@ -35,13 +35,13 @@ export class EditarUsuarioComponent implements OnInit {
 }
 
 
-//   getErrorMessage() {
-//     if (this.email.hasError('required')) {
-//       return 'Debes ingresar un valor';
-//     }
+  getErrorMessage() {
+    if (this.email.hasError('required')) {
+      return 'Debes ingresar un valor';
+    }
 
-//     return this.email.hasError('email') ? 'No es un correo electronico valido' : '';
-//   }
+    return this.email.hasError('email') ? 'No es un correo electronico valido' : '';
+  }
 
   
 
