@@ -23,7 +23,8 @@ import { InicioSesionComponent } from './inicio-sesion/inicio-sesion.component';
 import { RegistroComponent } from './registro/registro.component';
 import { HeaderComponent } from './core/header/header.component';
 
-import {MatMenuModule} from '@angular/material/menu'; 
+import {MatMenuModule} from '@angular/material/menu';
+import { EditarUsuarioComponent } from './editar-usuario/editar-usuario.component'; 
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import {MatMenuModule} from '@angular/material/menu';
     InicioSesionComponent,
     RegistroComponent,
     InicioSesionComponent,
-    HeaderComponent
+    HeaderComponent,
+    EditarUsuarioComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +57,7 @@ import {MatMenuModule} from '@angular/material/menu';
     MatIconModule,
     MatMenuModule
   ],
-  entryComponents:[EditarSesionComponent, VerSesionComponent, CrearSesionComponent],
+  entryComponents:[EditarSesionComponent, VerSesionComponent, CrearSesionComponent, EditarUsuarioComponent],
   providers: [],
   bootstrap: [AppComponent]
 })
