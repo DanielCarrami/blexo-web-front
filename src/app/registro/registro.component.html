@@ -1,6 +1,6 @@
 <div class= "top-container">
-        <mat-icon class="icon" id="logo" aria-hidden="false" aria-label="Example user verified icon">account_box</mat-icon>
-        <div class = "mat-display-3" id = "blexo">BLEXO</div>
+        <mat-icon class="icon" id="logo-register" aria-hidden="false" aria-label="Example user verified icon">account_box</mat-icon>
+        <div class = "mat-display-3" id = "blexo-register">BLEXO</div>
         <div class = "mat-display-1" id = "registro">Registro</div>
       </div>
     
@@ -12,7 +12,7 @@
                 <mat-icon matSuffix>account_circle</mat-icon>
         </mat-form-field>
 </div>
-
+<!--
 <div class="lastName-container">
 <label for="registerLastName"><b>Apellidos</b></label>
 <input type="text"
@@ -32,20 +32,23 @@
 </div>
 
 <div class="email-container">
-<label for="loginEmail"><b>Correo electrónico</b></label>
-<input type="text"
-        placeholder="Ingresa tu dirección de correo electrónico"
-        name="uname"
-        id = "loginEmail">
-</div>
-
-<div class="password-container">
-<label for="loginPassword"><b>Contraseña</b></label>
-<input type="password"
-        placeholder="Contraseña"
-        name="uname"
-        id = "loginPassword">
-</div>
+        <mat-form-field id="email-field-register" appearance="fill">
+          <mat-label>Correo electrónico</mat-label>
+          <input matInput placeholder="pat@example.com" [formControl]="email" required>
+          <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+        </div>
+    
+        <div class="password-container">
+          <mat-form-field id="password-field-register" appearance="fill">
+            <mat-label>Contraseña</mat-label>
+            <mat-hint>Mínimo 8 caractéres </mat-hint>
+            <input matInput [type]="hide ? 'password' : 'text'" required>
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <mat-icon id="eye-register">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+          </mat-form-field>
+        </div>
 
 <div class="confirmpassword-container">
 <label for="confirmPassword"><b>Confirmar Contraseña</b></label>
@@ -57,3 +60,4 @@
 
 <button type="submit"
           class = "btn btn-primary">Registrarse</button>
+-->

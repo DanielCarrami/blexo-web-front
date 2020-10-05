@@ -8,12 +8,12 @@ body {
   margin-left: 45%;
 }
 
-#logo{
+#logo-register{
   padding-left: 12%;
   padding-bottom: 3%;
 }
 
-#blexo{
+#blexo-register{
   padding-top: 10px;
   height:3px;
 }
@@ -27,49 +27,58 @@ body {
   margin-left: 45%;
 }
 
-.lastName-container{
-  padding: 0;
-  margin: 0;
-  position: absolute;
-  top:240px;
-  left: 35%;
-  width: 500px;
-  height: 150px;
-}
-.email-container {
-  padding: 0;
-  margin: 0;
-  position: absolute;
-  top:300px;
-  left: 28%;
-  width: 500px;
-  height: 200px;
+// .lastName-container{
+//   padding: 0;
+//   margin: 0;
+//   position: absolute;
+//   top:240px;
+//   left: 35%;
+//   width: 500px;
+//   height: 150px;
+// }
+// .email-container {
+//   padding: 0px;
+//   margin-top: 0px;
+//   margin-left: 45%;
+//   // height: 50px;
+// }
 
-}
-.password-container{
-  padding: 0;
-  margin: 0;
-  position: relative;
-  top: 290px;
-  left: 33%;
-  width: 500px;
-  height: 200px;
-}
+// #email-field-register{
+//   margin-left: -8%;
+//   // margin:0px;
+//   width: 300px;
+// }
 
-.confirmpassword-container{
-  padding: 0;
-  margin: 0;
-  position: absolute;
-  top:400px;
-  left: 25%;
-  width: 500px;
-  height: 200px;
-}
+// .password-container{
+//   padding: 0;
+//   //margin-top: 20px;
+//   margin-left: 45%;
+//   margin-bottom: 30px;
+// }
 
-.btn{
-  padding: 0;
-  margin: 0;
-  position: absolute;
-  top: 450px;
-  left: 45%;
-}
+// #password-field-register{
+//   margin-left: -8%;
+//   width: 300px;
+//   margin-top: 1px;
+// }
+// #eye-register{
+//   margin-left: -50%;
+// }
+
+// .confirmpassword-container{
+//   padding: 0;
+//   margin: 0;
+//   position: absolute;
+//   top:400px;
+//   left: 25%;
+//   width: 500px;
+//   height: 200px;
+// }
+
+// .btn{
+//   padding: 0;
+//   margin: 0;
+//   position: absolute;
+//   top: 450px;
+//   left: 45%;
+// }
