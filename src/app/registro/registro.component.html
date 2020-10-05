@@ -6,11 +6,11 @@
     
 
 <div class="name-container">
-<label for="registerName"><b>Nombre</b></label>
-<input type="text"
-        placeholder="Nombre"
-        name="uname"
-        id = "registerName">
+        <mat-form-field appearance="outline">
+                <mat-label>Nombre</mat-label>
+                <input matInput placeholder="Nombre">
+                <mat-icon matSuffix>account_circle</mat-icon>
+        </mat-form-field>
 </div>
 
 <div class="lastName-container">
@@ -19,6 +19,16 @@
         placeholder="Apellido"
         name="uname"
         id = "registerLastName">
+</div>
+
+<div class="cellphone-container">
+        <mat-form-field appearance="fill">
+                <mat-label>Teléfono</mat-label>
+                <example-tel-input formControlName="tel" required></example-tel-input>
+                <mat-icon matSuffix>phone</mat-icon>
+                
+              </mat-form-field>
+
 </div>
 
 <div class="email-container">

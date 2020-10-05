@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, Validators} from '@angular/forms';
+//import {FormControl, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-registro',
@@ -7,16 +7,16 @@ import {FormControl, Validators} from '@angular/forms';
   styleUrls: ['./registro.component.scss']
 })
 export class RegistroComponent implements OnInit {
-  email = new FormControl('', [Validators.required, Validators.email]);
-  hide = true;
+  // email = new FormControl('', [Validators.required, Validators.email]);
+  // hide = true;
 
-  getErrorMessage() {
-    if (this.email.hasError('required')) {
-      return 'Debes ingresar un valor';
-    }
+  // getErrorMessage() {
+  //   if (this.email.hasError('required')) {
+  //     return 'Debes ingresar un valor';
+  //   }
 
-    return this.email.hasError('email') ? 'No es un correo electronico valido' : '';
-  }
+  //   return this.email.hasError('email') ? 'No es un correo electronico valido' : '';
+  // }
 
   constructor() { }
 
