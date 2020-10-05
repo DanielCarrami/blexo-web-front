@@ -10,13 +10,13 @@ export class EditarUsuarioComponent implements OnInit {
   name = new FormControl('', [Validators.required, Validators.pattern((/^[a-zA-Z]*$/))]);
   lastname = new FormControl('', [Validators.required, Validators.pattern((/^[a-zA-Z]*$/))  ]);
    phone = new FormControl('', [Validators.required, Validators.pattern((/^((\\+91-?)|0)?[0-9]{10}$/))]);
-  // password = new FormControl('', [Validators.required]);
-  // confirmpassword = new FormControl('', [Validators.required]);
+  password = new FormControl('', [Validators.required]);
+  confirmpassword = new FormControl('', [Validators.required]);
 
 
    email = new FormControl('', [Validators.required, Validators.email]);
-  // hide = true;
-  // hideconfirm = true;
+   hide = true;
+   hideconfirm = true;
 
   getNameErrorMessage() {
     if (this.name.hasError('required')) {
@@ -48,9 +48,6 @@ export class EditarUsuarioComponent implements OnInit {
 //    checkPasswords() { 
 //     this.password.value === this.confirmpassword.value ? 'Las contraseñas no coinciden' : '';    
 // }
-
-
-
 
 
   constructor() { }

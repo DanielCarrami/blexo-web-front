@@ -26,6 +26,8 @@ import { HeaderComponent } from './core/header/header.component';
 import {MatMenuModule} from '@angular/material/menu';
 import { EditarUsuarioComponent } from './editar-usuario/editar-usuario.component'; 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {ScrollingModule} from '@angular/cdk/scrolling';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -57,7 +59,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatIconModule,
     MatMenuModule,
     FormsModule, 
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ScrollingModule,
+    MatButtonModule
   ],
   entryComponents:[EditarSesionComponent, VerSesionComponent, CrearSesionComponent, EditarUsuarioComponent],
   providers: [],

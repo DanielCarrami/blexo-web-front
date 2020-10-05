@@ -1,6 +1,5 @@
 <h2 mat-dialog-title>Editar perfil</h2>
-<mat-dialog-content>You will be logged out</mat-dialog-content>
-<mat-dialog-actions>
+<mat-dialog-content>
     <div class="names-container">
         <mat-form-field id="nombre-editar" appearance="outline">
                 <mat-label>Nombre</mat-label>
@@ -32,12 +31,37 @@
               </mat-form-field>
 
 
-        <mat-form-field id="email-field-register" appearance="outline">
+        <mat-form-field id="email-field-edit" appearance="outline">
           <mat-label>Correo electrónico</mat-label>
           <input matInput placeholder="pat@example.com" [formControl]="email" required>
           <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
         </mat-form-field>
 </div>
 
+<div class="password-container">
+        <mat-form-field id="password-field-register" appearance="outline">
+          <mat-label>Contraseña</mat-label>
+          <mat-hint>Mínimo 8 caractéres </mat-hint>
+          <input matInput [type]="hide ? 'password' : 'text'" [formControl]="password" required>
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          <mat-icon id="eye-register">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+        </mat-form-field>
 
+      <mat-form-field id="confirmpassword-field" appearance="outline">
+              <mat-label>Confirmar Contraseña</mat-label>
+              <mat-hint>Mínimo 8 caractéres </mat-hint>
+              <input matInput [type]="hide ? 'password' : 'text'" required>
+              <button mat-icon-button matSuffix (click)="hideconfirm = !hideconfirm" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hideconfirm">
+              <mat-icon id="eye-confirmregister">{{hideconfirm ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </button>
+            </mat-form-field>
+</div>
+</mat-dialog-content>
+<mat-dialog-actions>
+<div class="buttons">
+        <button color="warn" id="cancelar" mat-raised-button mat-dialog-close>Cancelar</button>
+        <button color="primary" id="guardar" mat-raised-button>Guardar Cambios</button>
+</div>
+        
 </mat-dialog-actions>
