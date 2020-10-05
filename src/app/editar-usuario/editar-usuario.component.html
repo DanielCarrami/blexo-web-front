@@ -1,5 +1,21 @@
 <h2 mat-dialog-title>Editar perfil</h2>
 <mat-dialog-content>You will be logged out</mat-dialog-content>
 <mat-dialog-actions>
-    
+    <div class="name-container">
+        <mat-form-field id="nombre" appearance="outline">
+                <mat-label>Nombre</mat-label>
+                <input matInput type="text" ng-pattern ="/^[a-zA-Z\s]*$/" placeholder="Nombre" [formControl]="name" required>
+                <mat-icon matSuffix>account_circle</mat-icon>
+                <mat-error *ngIf="name.invalid">{{getNameErrorMessage()}}</mat-error>
+        </mat-form-field>
+</div>
+
+<div class="lastName-container">
+        <mat-form-field id="apellido" appearance="outline">
+                <mat-label>Apellidos</mat-label>
+                <input matInput type="text" ng-pattern ="/^[a-zA-Z\s]*$/" placeholder="Apellidos" [formControl]="lastname" required>
+                <mat-icon matSuffix>account_circle</mat-icon>
+                <mat-error *ngIf="name.invalid">{{getLastNameErrorMessage()}}</mat-error>
+        </mat-form-field>
+</div>
 </mat-dialog-actions>
