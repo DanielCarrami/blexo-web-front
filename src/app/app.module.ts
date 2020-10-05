@@ -22,7 +22,8 @@ import { CrearSesionComponent } from './crear-sesion/crear-sesion.component';
 import { InicioSesionComponent } from './inicio-sesion/inicio-sesion.component';
 import { RegistroComponent } from './registro/registro.component';
 import { HeaderComponent } from './core/header/header.component';
-import { EditarUsuarioComponent } from './editar-usuario/editar-usuario.component';
+
+import {MatMenuModule} from '@angular/material/menu'; 
 
 
 @NgModule({
@@ -35,8 +36,7 @@ import { EditarUsuarioComponent } from './editar-usuario/editar-usuario.componen
     InicioSesionComponent,
     RegistroComponent,
     InicioSesionComponent,
-    HeaderComponent,
-    EditarUsuarioComponent
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -52,7 +52,8 @@ import { EditarUsuarioComponent } from './editar-usuario/editar-usuario.componen
     MatFormFieldModule,
     MatInputModule,
     MatToolbarModule,
-    MatIconModule
+    MatIconModule,
+    MatMenuModule
   ],
   entryComponents:[EditarSesionComponent, VerSesionComponent, CrearSesionComponent],
   providers: [],

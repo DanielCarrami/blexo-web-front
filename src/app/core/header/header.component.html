@@ -5,7 +5,25 @@
         <span class="spacer"></span>
         <div class="user_box">
             <p>Bienvenido {{user_name}}</p>
-            <mat-icon class="icon" aria-hidden="false" aria-label="Example user verified icon">account_box</mat-icon>
+
+            <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="icon-button with a menu">
+                <mat-icon class="icon" aria-hidden="false" aria-label="Example user verified icon">account_box</mat-icon>
+              </button>
+            <mat-menu #menu="matMenu">
+                <label mat-menu-item>{{user_name}}</label>
+                <label mat-menu-item>{{correo}}</label>
+                <button mat-menu-item>
+                    <mat-icon>create</mat-icon>
+                    <span>Editar Información</span>
+                </button>
+                <button mat-menu-item [routerLink]="['./iniciosesion']">
+                    
+                    <mat-icon>exit_to_app</mat-icon>
+                    <span>Cerrar Sesión</span>
+                </button>
+
+            </mat-menu>
+            
         </div>
     </mat-toolbar-row>
 </mat-toolbar>
