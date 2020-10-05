@@ -3,12 +3,24 @@ body {
   font-family: Roboto, Arial, sans-serif;
   margin: 0;
 }
+
 .top-container{
-  padding: 0;
-  margin: 0;
-  position: absolute;
-  top:80px;
-  left: 45%;
+  margin-top: 50px;
+  margin-left: 45%;
+}
+
+#logo{
+  padding-left: 12%;
+  padding-bottom: 3%;
+}
+
+#blexo{
+  padding-top: 10px;
+  height:3px;
+}
+
+#registro{
+  padding-top: 30px;
 }
 
 .name-container{
