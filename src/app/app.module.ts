@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+import { ProjectViewComponent } from './project-view/project-view.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTableModule } from '@angular/material/table';
 import { MatCardModule } from '@angular/material/card';
@@ -15,7 +16,9 @@ import { ChartsModule } from 'ng2-charts';
 import { EditarSesionComponent } from './editar-sesion/editar-sesion.component';
 
 import {MatDialog, MatDialogModule} from '@angular/material/dialog';
-import {MatFormField, MatFormFieldModule} from '@angular/material/form-field';
+//import {MatFormField, MatFormFieldModule} from '@angular/material/form-field';
+
+
 import {MatIconModule} from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import {MatInputModule} from '@angular/material/input';
@@ -24,6 +27,7 @@ import { CrearSesionComponent } from './crear-sesion/crear-sesion.component';
 import { InicioSesionComponent } from './inicio-sesion/inicio-sesion.component';
 import { RegistroComponent } from './registro/registro.component';
 import { HeaderComponent } from './core/header/header.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -32,6 +36,7 @@ import { HeaderComponent } from './core/header/header.component';
     VerSesionComponent,
     EditarSesionComponent,
     CrearSesionComponent,
+    ProjectViewComponent,
     InicioSesionComponent,
     RegistroComponent,
     HeaderComponent
@@ -47,11 +52,11 @@ import { HeaderComponent } from './core/header/header.component';
     ChartsModule,
     MatDialogModule,
     BrowserAnimationsModule,
-    MatFormField,
-    //MatFormFieldModule,
     MatInputModule,
     MatToolbarModule,
-    MatIconModule
+    MatIconModule,
+    FormsModule, 
+    ReactiveFormsModule
   ],
   entryComponents:[EditarSesionComponent, VerSesionComponent, CrearSesionComponent],
   providers: [],

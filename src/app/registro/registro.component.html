@@ -6,33 +6,41 @@
     
 
 <div class="name-container">
-        <mat-form-field appearance="outline">
+        <mat-form-field id="nombre" appearance="outline">
                 <mat-label>Nombre</mat-label>
-                <input matInput placeholder="Nombre">
+                <input matInput type="text" ng-pattern ="/^[a-zA-Z\s]*$/" placeholder="Nombre" [formControl]="name" required>
                 <mat-icon matSuffix>account_circle</mat-icon>
+                <mat-error *ngIf="name.invalid">{{getNameErrorMessage()}}</mat-error>
         </mat-form-field>
 </div>
-<!--
+
 <div class="lastName-container">
-<label for="registerLastName"><b>Apellidos</b></label>
-<input type="text"
-        placeholder="Apellido"
-        name="uname"
-        id = "registerLastName">
+        <mat-form-field id="apellido" appearance="outline">
+                <mat-label>Apellidos</mat-label>
+                <input matInput type="text" ng-pattern ="/^[a-zA-Z\s]*$/" placeholder="Apellidos" [formControl]="lastname" required>
+                <mat-icon matSuffix>account_circle</mat-icon>
+                <mat-error *ngIf="name.invalid">{{getLastNameErrorMessage()}}</mat-error>
+        </mat-form-field>
 </div>
 
 <div class="cellphone-container">
-        <mat-form-field appearance="fill">
+        <mat-form-field id = "cel" appearance="outline">
                 <mat-label>Teléfono</mat-label>
-                <example-tel-input formControlName="tel" required></example-tel-input>
+                <input matInput placeholder="Número de teléfono" [formControl]="phone">
+                <mat-error *ngIf="phone.hasError('required')">
+                        Se necesita <strong>número de teléfono</strong>
+                   </mat-error>
+                   <mat-error *ngIf="phone.hasError('pattern')">
+                        Solo se permiten <strong>números</strong>
+                   </mat-error>
                 <mat-icon matSuffix>phone</mat-icon>
-                
+                <mat-hint>Utiliza solo números</mat-hint>
               </mat-form-field>
 
 </div>
 
 <div class="email-container">
-        <mat-form-field id="email-field-register" appearance="fill">
+        <mat-form-field id="email-field-register" appearance="outline">
           <mat-label>Correo electrónico</mat-label>
           <input matInput placeholder="pat@example.com" [formControl]="email" required>
           <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
@@ -40,24 +48,27 @@
         </div>
     
         <div class="password-container">
-          <mat-form-field id="password-field-register" appearance="fill">
+          <mat-form-field id="password-field-register" appearance="outline">
             <mat-label>Contraseña</mat-label>
             <mat-hint>Mínimo 8 caractéres </mat-hint>
-            <input matInput [type]="hide ? 'password' : 'text'" required>
+            <input matInput [type]="hide ? 'password' : 'text'" [formControl]="password" required>
             <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
             <mat-icon id="eye-register">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
             </button>
           </mat-form-field>
         </div>
 
+
 <div class="confirmpassword-container">
-<label for="confirmPassword"><b>Confirmar Contraseña</b></label>
-<input type="password"
-        placeholder="Confirmar Contraseña"
-        name="uname"
-        id = "confirmPassword">
+        <mat-form-field id="confirmpassword-field" appearance="outline">
+                <mat-label>Confirmar Contraseña</mat-label>
+                <mat-hint>Mínimo 8 caractéres </mat-hint>
+                <input matInput [type]="hide ? 'password' : 'text'" required>
+                <button mat-icon-button matSuffix (click)="hideconfirm = !hideconfirm" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hideconfirm">
+                <mat-icon id="eye-confirmregister">{{hideconfirm ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+              </mat-form-field>
 </div>
 
-<button type="submit"
-          class = "btn btn-primary">Registrarse</button>
--->
+<button id="register" (click)="checkPasswords()" mat-flat-button color="warn">Registrarse</button>
+<a id="link"href="../iniciosesion/"> Tienes cuenta? Inicia Sesión</a>
