@@ -25,7 +25,7 @@ import { HeaderComponent } from './core/header/header.component';
 
 import {MatMenuModule} from '@angular/material/menu';
 import { EditarUsuarioComponent } from './editar-usuario/editar-usuario.component'; 
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -55,7 +55,9 @@ import { EditarUsuarioComponent } from './editar-usuario/editar-usuario.componen
     MatInputModule,
     MatToolbarModule,
     MatIconModule,
-    MatMenuModule
+    MatMenuModule,
+    FormsModule, 
+    ReactiveFormsModule
   ],
   entryComponents:[EditarSesionComponent, VerSesionComponent, CrearSesionComponent, EditarUsuarioComponent],
   providers: [],
