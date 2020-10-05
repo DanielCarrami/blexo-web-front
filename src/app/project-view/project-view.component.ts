@@ -3,6 +3,7 @@ import { CreateProjectComponent } from '../create-project/create-project.compone
 import { MatDialog } from '@angular/material/dialog';
 import { EditProjectComponent } from '../edit-project/edit-project.component';
 
+// added provider
 @Component({
   selector: 'app-project-view',
   templateUrl: './project-view.component.html',
