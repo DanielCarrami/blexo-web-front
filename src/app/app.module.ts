@@ -16,6 +16,8 @@ import { CrearSesionComponent } from './crear-sesion/crear-sesion.component';
 import { InicioSesionComponent } from './inicio-sesion/inicio-sesion.component';
 import { RegistroComponent } from './registro/registro.component';
 import { HeaderComponent } from './core/header/header.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,10 @@ import { HeaderComponent } from './core/header/header.component';
     MatFormFieldModule,
     MatInputModule,
     MatToolbarModule,
-    MatIconModule
+    MatIconModule,
+    FormsModule, 
+    ReactiveFormsModule,
+    MatButtonModule 
   ],
   entryComponents:[EditarSesionComponent, VerSesionComponent, CrearSesionComponent],
   providers: [],
