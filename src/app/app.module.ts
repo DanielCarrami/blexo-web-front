@@ -10,6 +10,12 @@ import { MatTableModule } from '@angular/material/table';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatDividerModule } from '@angular/material/divider';
+import { CreateProjectComponent } from './create-project/create-project.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { FormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { EditProjectComponent } from './edit-project/edit-project.component';
 
 import { VerSesionComponent } from './ver-sesion/ver-sesion.component';
 import { ChartsModule } from 'ng2-charts';
@@ -35,10 +41,13 @@ import { MatButtonModule } from '@angular/material/button';
 @NgModule({
   declarations: [
     AppComponent,
+    ProjectViewComponent,
+    CreateProjectComponent,
+    EditProjectComponent,
+
     VerSesionComponent,
     EditarSesionComponent,
     CrearSesionComponent,
-    ProjectViewComponent,
     InicioSesionComponent,
     RegistroComponent,
     HeaderComponent
@@ -51,6 +60,9 @@ import { MatButtonModule } from '@angular/material/button';
     MatCardModule,
     MatGridListModule,
     MatDividerModule,
+    MatDialogModule,
+    FormsModule,
+    MatInputModule,
     ChartsModule,
     MatDialogModule,
     BrowserAnimationsModule,
@@ -59,11 +71,12 @@ import { MatButtonModule } from '@angular/material/button';
     MatIconModule,
     FormsModule, 
     ReactiveFormsModule,
-    MatButtonModule 
+    MatButtonModule,
+    MatFormFieldModule,
 
   ],
   entryComponents:[EditarSesionComponent, VerSesionComponent, CrearSesionComponent],
-  providers: [],
+  providers: [MatDialogModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
