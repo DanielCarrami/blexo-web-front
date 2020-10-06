@@ -4,44 +4,59 @@ body {
   margin: 0;
 }
 .top-container{
-  padding: 0;
-  margin: 0;
-  position: absolute;
-  top:80px;
-  left: 45%;
+  margin-top: 50px;
+  margin-left: 45%;
 }
 
+#logo{
+  padding-left: 12%;
+  padding-bottom: 3%;
+}
+
+#blexo{
+  padding-top: 10px;
+  height:3px;
+}
+
+#iniciar-sesion{
+  padding-top: 30px;
+}
 
 .email-container {
-  padding: 0;
-  margin: 0;
-  position: absolute;
-  top:190px;
-  left: 35%;
-  width: 500px;
-  height: 200px;
-
+  padding: 0px;
+  margin-top: 0px;
+  margin-left: 45%;
+  // height: 50px;
 }
+
+#email-field{
+  margin-left: -8%;
+  // margin:0px;
+  width: 300px;
+}
+
 .password-container{
   padding: 0;
-  margin: 0;
-  position: relative;
-  top: 220px;
-  left: 39%;
-  width: 500px;
-  height: 200px;
+  //margin-top: 20px;
+  margin-left: 45%;
+  margin-bottom: 30px;
 }
-.btn{
-  padding: 0;
-  margin: 0;
-  position: absolute;
-  top: 350px;
-  left: 45%;
+
+#password-field{
+  margin-left: -8%;
+  width: 300px;
+  margin-top: 1px;
 }
+#eye{
+  margin-left: -50%;
+}
+
+button{
+  //margin-top: 30px;
+  margin-left: 50%;
+margin-bottom: 10px;
+}
+
 a{
-  padding: 0;
-  margin: 0;
-  position: absolute;
-  top: 400px;
-  left: 40%;
+  margin-left: 45%;
 }
