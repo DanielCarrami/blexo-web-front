@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { FormControl, FormBuilder, Validators } from '@angular/forms';
+import { Component, OnInit, Inject } from '@angular/core';
+import { FormControl, FormBuilder, Validators, FormGroup } from '@angular/forms';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+
 
 @Component({
   selector: 'app-editar-usuario',
@@ -7,50 +9,55 @@ import { FormControl, FormBuilder, Validators } from '@angular/forms';
   styleUrls: ['./editar-usuario.component.scss']
 })
 export class EditarUsuarioComponent implements OnInit {
-  name = new FormControl('', [Validators.required, Validators.pattern((/^[a-zA-Z]*$/))]);
-  lastname = new FormControl('', [Validators.required, Validators.pattern((/^[a-zA-Z]*$/))  ]);
-   phone = new FormControl('', [Validators.required, Validators.pattern((/^((\\+91-?)|0)?[0-9]{10}$/))]);
-  password = new FormControl('', [Validators.required]);
-  confirmpassword = new FormControl('', [Validators.required]);
-
-
-   email = new FormControl('', [Validators.required, Validators.email]);
+  userForm = new FormGroup({
+    name: new FormControl('', [Validators.required, Validators.pattern((/^[a-zA-Z]*$/))]),
+    lastname: new FormControl('', [Validators.required, Validators.pattern((/^[a-zA-Z]*$/))]),
+   phone: new FormControl('', [Validators.required, Validators.pattern((/^((\\+91-?)|0)?[0-9]{10}$/))]),
+   correo: new FormControl('', [Validators.required, Validators.email]),
+  password: new FormControl('', [Validators.required]),
+  confirmpassword: new FormControl('', [Validators.required])
+   
+    
+  });
+  
    hide = true;
    hideconfirm = true;
 
   getNameErrorMessage() {
-    if (this.name.hasError('required')) {
+    if (this.userForm.value.name.hasError('required')) {
      return 'Debes ingresar un nombre';
    }
 
-   return this.name.hasError('pattern') ? 'No es un nombre válido' : '';
+   return this.userForm.value.name.hasError('pattern') ? 'No es un nombre válido' : '';
  }
 
  getLastNameErrorMessage() {
-   if (this.lastname.hasError('required')) {
+   if (this.userForm.value.lastname.hasError('required')) {
     return 'Debes ingresar un apellido';
   }
 
-  return this.name.hasError('pattern') ? 'Solo se permiten letras y espacios' : '';
+  return this.userForm.value.lastname.hasError('pattern') ? 'Solo se permiten letras y espacios' : '';
 }
 
+  getPhoneErrorMesage(){
+    if (this.userForm.value.phone.hasError('required')) {
+      return 'Debes ingresar un número de teléfono';
+    }
+ 
+    return this.userForm.value.phone.hasError('pattern') ? 'No es un número válido' : '';
+  }
 
   getErrorMessage() {
-    if (this.email.hasError('required')) {
+    if (this.userForm.value.correo.hasError('required')) {
       return 'Debes ingresar un valor';
     }
 
-    return this.email.hasError('email') ? 'No es un correo electronico valido' : '';
+    return this.userForm.value.correo.hasError('email') ? 'No es un correo electronico valido' : '';
   }
 
-  
 
-//    checkPasswords() { 
-//     this.password.value === this.confirmpassword.value ? 'Las contraseñas no coinciden' : '';    
-// }
-
-
-  constructor() { }
+  constructor(
+    @Inject(MAT_DIALOG_DATA) public data: any) {}
 
   ngOnInit(): void {
   }
