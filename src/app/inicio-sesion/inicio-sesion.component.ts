@@ -32,7 +32,7 @@ export class InicioSesionComponent implements OnInit {
   login(){
     console.log(
       "Email: " + this.user.email.toString(),
-      "\n Clave: " + this.user.clave.toString()
+      "\nClave: " + this.user.clave.toString()
     );
     this.router.navigate(['/proyecto']);
   }

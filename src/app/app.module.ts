@@ -15,6 +15,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import {MatTabsModule} from '@angular/material/tabs';
 import { EditProjectComponent } from './edit-project/edit-project.component';
 
 import { VerSesionComponent } from './ver-sesion/ver-sesion.component';
@@ -68,6 +69,7 @@ import { MatButtonModule } from '@angular/material/button';
     MatInputModule,
     MatToolbarModule,
     MatIconModule,
+    MatTabsModule,
     FormsModule, 
     ReactiveFormsModule,
     MatButtonModule,
