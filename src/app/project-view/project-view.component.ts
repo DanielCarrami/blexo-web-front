@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CreateProjectComponent } from '../create-project/create-project.component';
 import { MatDialog } from '@angular/material/dialog';
 import { EditProjectComponent } from '../edit-project/edit-project.component';
-
+import {Router} from '@angular/router'
 // added provider
 @Component({
   selector: 'app-project-view',
@@ -12,7 +12,7 @@ import { EditProjectComponent } from '../edit-project/edit-project.component';
 })
 export class ProjectViewComponent implements OnInit {
 
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog, private router: Router) { }
   proyectos = [
     {
       label: "First",
@@ -84,5 +84,9 @@ export class ProjectViewComponent implements OnInit {
     this.dialog.open(EditProjectComponent, {
       width: '450px'
     });
+  }
+
+  verSesion(): void{
+    this.router.navigate(['/sesion'])
   }
 }
