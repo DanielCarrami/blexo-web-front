@@ -9,11 +9,12 @@ import { ProjectViewComponent } from './project-view/project-view.component';
 
 
 const routes: Routes = [
-  { path: 'project', component: ProjectViewComponent},
-  {path: 'versesion', component: VerSesionComponent},
+  {path: '', component: InicioSesionComponent},
   {path: 'iniciosesion', component: InicioSesionComponent},
-  {path: 'versesion', component: VerSesionComponent},
-  {path: 'registro', component: RegistroComponent}
+  {path: 'proyecto', component: ProjectViewComponent},
+  {path: 'sesion', component: VerSesionComponent},
+  {path: 'registro', component: RegistroComponent},
+
 ];
 
 @NgModule({

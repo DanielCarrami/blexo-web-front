@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { ChartOptions, ChartType, ChartDataSets } from 'chart.js';
 import { Label } from 'ng2-charts';
 import {MatDialog,MatDialogConfig} from '@angular/material/dialog';
@@ -10,14 +10,25 @@ import { EditarSesionComponent } from '../editar-sesion/editar-sesion.component'
   styleUrls: ['./ver-sesion.component.scss']
 })
 export class VerSesionComponent implements OnInit {
-
-  descripcion = "descripcion generica"
-
-  nombreproyecto = "Proyecto 1"
-
-  titulo_experimento = "experimento 1"
-
-  contenido_experimento = "salio chido"
+  sesion = {
+      label: "First",
+      title: "Sesion 1",
+      content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac vestibulum ante, a pretium ante. Curabitur vulputate pharetra erat sit amet scelerisque. Ut vel lobortis ex. Proin quis mauris urna. Integer ut orci nulla. Curabitur nec arcu et enim laoreet vehicula. Aliquam sed lorem id neque malesuada lacinia. Donec non congue libero. Duis et pretium sapien, eget commodo ante. Sed consectetur quam urna, quis vehicula velit aliquet eu. Vivamus et volutpat nisl. Ut suscipit urna vitae dolor hendrerit sollicitudin. Fusce aliquam ante hendrerit justo tincidunt egestas. Duis viverra dui a arcu pharetra consequat. Nulla sollicitudin placerat libero varius elementum. Integer non maximus eros.Nam iaculis quis lorem blandit efficitur. Praesent tempor risus tellus, ut tempus enim mattis eget. Donec eleifend auctor odio, id faucibus augue posuere quis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Praesent nec purus posuere, suscipit ligula ac, bibendum lectus. Cras cursus lectus non mauris posuere efficitur. Integer consequat lacus interdum, eleifend metus eu, malesuada odio. Nullam nec vulputate leo, sit amet porttitor lacus. Donec id mattis mauris. Sed a nibh orci. Praesent arcu felis, viverra sit amet sodales non, cursus eu augue. In libero leo, pretium sed dignissim non, ornare eu sapien. Ut malesuada euismod diam nec sollicitudin. Nulla condimentum ex ex, a dignissim leo condimentum nec. Quisque ac tortor finibus, finibus enim blandit, dignissim nulla. Nullam malesuada neque scelerisque ornare eleifend. Nulla ultricies ultrices lacus ac pharetra. Maecenas facilisis lacus at volutpat bibendum. Nulla id molestie urna. Suspendisse potenti.",
+      experimentos: [
+        {
+          title: "Experimento 1",
+          content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac vestibulum ante, a pretium ante. Curabitur vulputate pharetra erat sit amet scelerisque. Ut vel lobortis ex. Proin quis mauris urna. Integer ut orci nulla. Curabitur nec arcu et enim laoreet vehicula. Aliquam sed lorem id neque malesuada lacinia. Donec non congue libero. Duis et pretium sapien, eget commodo ante. Sed consectetur quam urna, quis vehicula velit aliquet eu. Vivamus et volutpat nisl. Ut suscipit urna vitae dolor hendrerit sollicitudin. Fusce aliquam ante hendrerit justo tincidunt egestas. Duis viverra dui a arcu pharetra consequat. Nulla sollicitudin placerat libero varius elementum. Integer non maximus eros.Nam iaculis quis lorem blandit efficitur. Praesent tempor risus tellus, ut tempus enim mattis eget. Donec eleifend auctor odio, id faucibus augue posuere quis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Praesent nec purus posuere, suscipit ligula ac, bibendum lectus. Cras cursus lectus non mauris posuere efficitur. Integer consequat lacus interdum, eleifend metus eu, malesuada odio. Nullam nec vulputate leo, sit amet porttitor lacus. Donec id mattis mauris. Sed a nibh orci. Praesent arcu felis, viverra sit amet sodales non, cursus eu augue. In libero leo, pretium sed dignissim non, ornare eu sapien. Ut malesuada euismod diam nec sollicitudin. Nulla condimentum ex ex, a dignissim leo condimentum nec. Quisque ac tortor finibus, finibus enim blandit, dignissim nulla. Nullam malesuada neque scelerisque ornare eleifend. Nulla ultricies ultrices lacus ac pharetra. Maecenas facilisis lacus at volutpat bibendum. Nulla id molestie urna. Suspendisse potenti."
+        },
+        {
+          title: "Experimento 2",
+          content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac vestibulum ante, a pretium ante. Curabitur vulputate pharetra erat sit amet scelerisque. Ut vel lobortis ex. Proin quis mauris urna. Integer ut orci nulla. Curabitur nec arcu et enim laoreet vehicula. Aliquam sed lorem id neque malesuada lacinia. Donec non congue libero. Duis et pretium sapien, eget commodo ante. Sed consectetur quam urna, quis vehicula velit aliquet eu. Vivamus et volutpat nisl. Ut suscipit urna vitae dolor hendrerit sollicitudin. Fusce aliquam ante hendrerit justo tincidunt egestas. Duis viverra dui a arcu pharetra consequat. Nulla sollicitudin placerat libero varius elementum. Integer non maximus eros.Nam iaculis quis lorem blandit efficitur. Praesent tempor risus tellus, ut tempus enim mattis eget. Donec eleifend auctor odio, id faucibus augue posuere quis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Praesent nec purus posuere, suscipit ligula ac, bibendum lectus. Cras cursus lectus non mauris posuere efficitur. Integer consequat lacus interdum, eleifend metus eu, malesuada odio. Nullam nec vulputate leo, sit amet porttitor lacus. Donec id mattis mauris. Sed a nibh orci. Praesent arcu felis, viverra sit amet sodales non, cursus eu augue. In libero leo, pretium sed dignissim non, ornare eu sapien. Ut malesuada euismod diam nec sollicitudin. Nulla condimentum ex ex, a dignissim leo condimentum nec. Quisque ac tortor finibus, finibus enim blandit, dignissim nulla. Nullam malesuada neque scelerisque ornare eleifend. Nulla ultricies ultrices lacus ac pharetra. Maecenas facilisis lacus at volutpat bibendum. Nulla id molestie urna. Suspendisse potenti."
+        },
+        {
+          title: "Experimento 3",
+          content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac vestibulum ante, a pretium ante. Curabitur vulputate pharetra erat sit amet scelerisque. Ut vel lobortis ex. Proin quis mauris urna. Integer ut orci nulla. Curabitur nec arcu et enim laoreet vehicula. Aliquam sed lorem id neque malesuada lacinia. Donec non congue libero. Duis et pretium sapien, eget commodo ante. Sed consectetur quam urna, quis vehicula velit aliquet eu. Vivamus et volutpat nisl. Ut suscipit urna vitae dolor hendrerit sollicitudin. Fusce aliquam ante hendrerit justo tincidunt egestas. Duis viverra dui a arcu pharetra consequat. Nulla sollicitudin placerat libero varius elementum. Integer non maximus eros.Nam iaculis quis lorem blandit efficitur. Praesent tempor risus tellus, ut tempus enim mattis eget. Donec eleifend auctor odio, id faucibus augue posuere quis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Praesent nec purus posuere, suscipit ligula ac, bibendum lectus. Cras cursus lectus non mauris posuere efficitur. Integer consequat lacus interdum, eleifend metus eu, malesuada odio. Nullam nec vulputate leo, sit amet porttitor lacus. Donec id mattis mauris. Sed a nibh orci. Praesent arcu felis, viverra sit amet sodales non, cursus eu augue. In libero leo, pretium sed dignissim non, ornare eu sapien. Ut malesuada euismod diam nec sollicitudin. Nulla condimentum ex ex, a dignissim leo condimentum nec. Quisque ac tortor finibus, finibus enim blandit, dignissim nulla. Nullam malesuada neque scelerisque ornare eleifend. Nulla ultricies ultrices lacus ac pharetra. Maecenas facilisis lacus at volutpat bibendum. Nulla id molestie urna. Suspendisse potenti."
+        }
+      ]
+    };
 
   public barChartOptions: ChartOptions = {
     responsive: true,
@@ -41,7 +52,9 @@ export class VerSesionComponent implements OnInit {
   ];
 
 
-  constructor(public dialog: MatDialog) { }
+  constructor(
+    public dialog: MatDialog
+  ) { }
 
   ngOnInit(): void {
   }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router'
 
 import {FormControl, Validators} from '@angular/forms';
 
@@ -10,8 +11,13 @@ import {FormControl, Validators} from '@angular/forms';
 })
 export class InicioSesionComponent implements OnInit {
 
-  email = new FormControl('', [Validators.required, Validators.email]);
   hide = true;
+  email = new FormControl('', [Validators.required, Validators.email]);
+  user = {
+    email: "",
+    clave: ""
+  }
+
 
   getErrorMessage() {
     if (this.email.hasError('required')) {
@@ -21,11 +27,17 @@ export class InicioSesionComponent implements OnInit {
     return this.email.hasError('email') ? 'No es un correo electronico valido' : '';
   }
 
-  constructor() { }
+  constructor(private router: Router) { }
+
+  login(){
+    console.log(
+      "Email: " + this.user.email.toString(),
+      "\nClave: " + this.user.clave.toString()
+    );
+    this.router.navigate(['/proyecto']);
+  }
 
   ngOnInit(): void {
-
-
     
   }
 
