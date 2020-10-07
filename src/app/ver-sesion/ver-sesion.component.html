@@ -1,34 +1,11 @@
-<!--
-<div class = "container">
-    <div class="square">
-        <p class="font-titulo">&nbsp;BLEXO&nbsp; 
-        </p>
 
-        <p class="font-nombre">&nbsp;Bienvenido/a&nbsp;
-        </p>
-    </div>
-</div>
--->
-
-<div class = "flex-container-titulo">
-    <div class = "square">
-        <p class="font-titulo">&nbsp;{{nombreproyecto}}&nbsp; </p>
-    </div>
-</div>
-
-
-<div class = "flex-container">
-    <div class = "container2">
-        <p class = "font-descripcion-principal"> DESCRIPCION </p>
-        
-    </div>
-    <div class = "container2">
-        <p class = "font-descripcion-principal"><br> {{descripcion}}</p>
-    </div>
-
-
-    
-    <!--Chart-->
+<div class="sesion"><br><br>
+    <mat-card>
+      <mat-card-title>{{sesion.title}}</mat-card-title><br>
+        <mat-card-content>
+          {{sesion.content}}
+        </mat-card-content>
+    </mat-card>
     <div class="graph-container">
         <div style="display: block">
           <canvas baseChart height="200px" width ="600"
@@ -40,53 +17,17 @@
           </canvas>
         </div>
     </div>
-
-
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-
+    <div class="sesion-grid">
+      <mat-card *ngFor="let exp of sesion.experimentos" class="sesion-card">
+        <mat-card-title>{{exp.title}}</mat-card-title>
+        <mat-card-content>
+          <p>{{exp.content}}</p>
+        </mat-card-content>
+        <button id="boton" type="button" mat-raised-button class="btn btn-outline-success">Ver más</button>
+      </mat-card>
+    </div><br>
     <div class="news-container">
-        <div>
-            <p class="titulo_noticia">{{titulo_experimento}}</p> 
-            <br><br>
-            <div class="info_noticia"> 
-                <p class="titulo_noticia">{{contenido_experimento}}</p> 
-            </div>
-        </div>
-        <div>
-            <p class="titulo_noticia">{{titulo_experimento}}</p> 
-            <br><br>
-            <div class="info_noticia"> 
-                <p class="titulo_noticia">{{contenido_experimento}}</p> 
-            </div>
-        </div>
-        <div>
-            <p class="titulo_noticia">{{titulo_experimento}}</p> 
-            <br><br>
-            <div class="info_noticia"> 
-                <p class="titulo_noticia">{{contenido_experimento}}</p> 
-            </div>
-        </div>
-    </div>
-    <div class = "flex-container-titulo">
-        <div class = "square">
-            <p class="font-titulo"></p>
-            <br>
-        </div>
-    </div>
-
-
-    <div class="news-container">
-         <button mat-raised-button (click)="popup()" class="button" style="float:center" color="accent">Aplicar cambios</button>
-    </div>
-
-
-    <br>
-       
-    
-
+        <button mat-raised-button (click)="popup()" class="button" style="float:center" color="accent">Editar sesion</button>
+   </div>
+   <br><br>
 </div>
