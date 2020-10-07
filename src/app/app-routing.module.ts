@@ -14,7 +14,6 @@ const routes: Routes = [
   {path: 'proyecto', component: ProjectViewComponent},
   {path: 'sesion', component: VerSesionComponent},
   {path: 'registro', component: RegistroComponent},
-
 ];
 
 @NgModule({

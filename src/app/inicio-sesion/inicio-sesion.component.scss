@@ -1,62 +1,43 @@
-
-body {
-  font-family: Roboto, Arial, sans-serif;
-  margin: 0;
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  background-color: #d4dccd;
 }
+
 .top-container{
-  margin-top: 50px;
-  margin-left: 45%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-#logo{
-  padding-left: 12%;
-  padding-bottom: 3%;
+.icon{
+  margin-bottom: 20px;
 }
 
-#blexo{
-  padding-top: 10px;
-  height:3px;
-}
-
-#iniciar-sesion{
-  padding-top: 30px;
-}
-
-.email-container {
-  padding: 0px;
-  margin-top: 0px;
-  margin-left: 45%;
-  // height: 50px;
-}
-
-#email-field{
-  margin-left: -8%;
-  // margin:0px;
-  width: 300px;
+.card{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
 }
 
 .password-container{
-  padding: 0;
-  //margin-top: 20px;
-  margin-left: 45%;
   margin-bottom: 30px;
 }
 
-#password-field{
-  margin-left: -8%;
+#email-field{
   width: 300px;
-  margin-top: 1px;
-}
-#eye{
-  margin-left: -50%;
 }
 
-button{
-  //margin-top: 30px;
-  margin-left: 50%;
-margin-bottom: 10px;
+#password-field{
+  width: 300px;
 }
 
 a{
-  margin-left: 45%;
+  margin-top: 20px;
 }

@@ -1,5 +1,9 @@
-
-<div class="sesion"><br><br>
+<div class="container">
+  <button mat-raised-button (click)="popup()" class="button" style="float:center" color="accent">Editar sesion</button>
+  <br><br>
+<div class="sesion">
+  <br><br>
+  
     <mat-card>
       <mat-card-title>{{sesion.title}}</mat-card-title><br>
         <mat-card-content>
@@ -25,9 +29,7 @@
         </mat-card-content>
         <button id="boton" type="button" mat-raised-button class="btn btn-outline-success">Ver más</button>
       </mat-card>
-    </div><br>
-    <div class="news-container">
-        <button mat-raised-button (click)="popup()" class="button" style="float:center" color="accent">Editar sesion</button>
-   </div>
-   <br><br>
+    </div>
+</div>
+<br><br>
 </div>
