@@ -11,22 +11,17 @@ import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatDividerModule } from '@angular/material/divider';
 import { CreateProjectComponent } from './create-project/create-project.component';
-import { MatDialogModule } from '@angular/material/dialog';
-import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import {MatTabsModule} from '@angular/material/tabs';
+import { MatTabsModule } from '@angular/material/tabs';
 import { EditProjectComponent } from './edit-project/edit-project.component';
 
 import { VerSesionComponent } from './ver-sesion/ver-sesion.component';
 import { ChartsModule } from 'ng2-charts';
 import { EditarSesionComponent } from './editar-sesion/editar-sesion.component';
 
-import {MatDialog} from '@angular/material/dialog';
-//import {MatFormField, MatFormFieldModule} from '@angular/material/form-field';
-
-
-import {MatIconModule} from '@angular/material/icon';
+import { MatDialog, MatDialogModule} from '@angular/material/dialog';
+import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
 import { CrearSesionComponent } from './crear-sesion/crear-sesion.component';
@@ -34,9 +29,12 @@ import { InicioSesionComponent } from './inicio-sesion/inicio-sesion.component';
 import { RegistroComponent } from './registro/registro.component';
 import { HeaderComponent } from './core/header/header.component';
 
-import {ReactiveFormsModule} from '@angular/forms';
-import { MatButtonModule } from '@angular/material/button';
+import { MatMenuModule } from '@angular/material/menu';
+import { EditarUsuarioComponent } from './editar-usuario/editar-usuario.component'; 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -50,7 +48,9 @@ import { MatButtonModule } from '@angular/material/button';
     CrearSesionComponent,
     InicioSesionComponent,
     RegistroComponent,
-    HeaderComponent
+    InicioSesionComponent,
+    HeaderComponent,
+    EditarUsuarioComponent
   ],
   imports: [
     BrowserModule,
@@ -69,14 +69,14 @@ import { MatButtonModule } from '@angular/material/button';
     MatInputModule,
     MatToolbarModule,
     MatIconModule,
+    MatMenuModule,
     MatTabsModule,
-    FormsModule, 
     ReactiveFormsModule,
-    MatButtonModule,
+    ScrollingModule,
     MatFormFieldModule,
-
+    MatButtonModule
   ],
-  entryComponents:[EditarSesionComponent, VerSesionComponent, CrearSesionComponent],
+  entryComponents:[EditarSesionComponent, VerSesionComponent, CrearSesionComponent, EditarUsuarioComponent],
   providers: [MatDialogModule],
   bootstrap: [AppComponent]
 })
