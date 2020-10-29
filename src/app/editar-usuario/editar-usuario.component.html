@@ -21,7 +21,7 @@
                         <mat-form-field id = "cel" appearance="outline">
                                 <mat-label>Teléfono</mat-label>
                                 <input matInput placeholder="Número de teléfono" [(ngModel)]="data.telefono" formControlName="phone">
-                                <mat-error *ngIf="userForm.value.phone.invalid">{{getPhoneErrorMessage()}}</mat-error>
+                                <mat-error *ngIf="userForm.value.phone.invalid">{{getPhoneErrorMesage()}}</mat-error>
                                 <mat-icon matSuffix>phone</mat-icon>
                                 <mat-hint>Intenta utilizar números y guiones</mat-hint>
                         </mat-form-field>

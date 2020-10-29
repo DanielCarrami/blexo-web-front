@@ -16,10 +16,11 @@
       <div class="sesion-grid">
         <mat-card *ngFor="let sesion of proyecto.sesiones" class="sesion-card">
           <mat-card-title>{{sesion.title}}</mat-card-title>
+          <button id="boton" type="button" mat-raised-button class="btn btn-outline-success" (click)="this.verSesion()">Ver más</button>
           <mat-card-content>
             <p>{{sesion.content}}</p>
           </mat-card-content>
-          <button id="boton" type="button" mat-raised-button class="btn btn-outline-success" (click)="this.verSesion()">Ver más</button>
+          
         </mat-card>
       </div>
     </mat-tab>

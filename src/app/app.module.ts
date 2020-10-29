@@ -42,7 +42,6 @@ import { MatButtonModule } from '@angular/material/button';
     ProjectViewComponent,
     CreateProjectComponent,
     EditProjectComponent,
-
     VerSesionComponent,
     EditarSesionComponent,
     CrearSesionComponent,
@@ -77,7 +76,9 @@ import { MatButtonModule } from '@angular/material/button';
     MatButtonModule
   ],
   entryComponents:[EditarSesionComponent, VerSesionComponent, CrearSesionComponent, EditarUsuarioComponent],
-  providers: [MatDialogModule],
+  providers: [
+    MatDialogModule
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
