@@ -1,0 +1,31 @@
+<div class="container">
+  <mat-card class="card">
+  <div class="top-container">
+    <mat-icon class="icon" id="logo" aria-hidden="false" aria-label="Example user verified icon">account_box</mat-icon>
+    <div class = "mat-display-2" id = "blexo">BLEXO</div>
+    <div class = "mat-display-1" id = "iniciar-sesion">Iniciar Sesión</div>
+  </div>
+
+    <div class="email-container">
+    <mat-form-field id="email-field" appearance="fill">
+      <mat-label>Correo electrónico</mat-label>
+      <input matInput [(ngModel)]="user.email" placeholder="pat@example.com" [formControl]="email" required>
+      <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+    </mat-form-field>
+    </div>
+
+    <div class="password-container">
+      <mat-form-field id="password-field" appearance="fill">
+        <mat-label>Contraseña</mat-label>
+        <mat-hint>Mínimo 8 caractéres </mat-hint>
+        <input [(ngModel)]="user.clave" matInput [type]="hide ? 'password' : 'text'" required >
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+        <mat-icon id="eye">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+
+    <button color="warn" mat-raised-button (click)="this.login()">Iniciar Sesión</button>
+    <a href="../registro/"> No tienes cuenta? Registrate</a>
+  </mat-card>
+</div>

@@ -1,0 +1,74 @@
+body {
+  font-family: Roboto, Arial, sans-serif;
+  margin: 0;
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #d4dccd;
+  height: 100%;
+}
+
+.card{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#blexo-register{
+  padding-top: 10px;
+  height:3px;
+}
+
+
+.name-container{
+  margin-top: 20px;
+}
+
+#nombre{
+  width: 300px;
+}
+
+
+#apellido{
+  width: 300px;
+}
+
+#cel{
+  width: 300px;
+}
+
+
+
+#email-field-register{
+  width: 300px;
+}
+
+
+#password-field-register{
+  width: 300px;
+}
+#eye-register{
+  align-self: center;
+  margin-top: 10px;
+}
+
+
+#confirmpassword-field{
+  width: 300px;
+}
+#eye-confirmregister{
+  margin-top: 10px;
+}
+
+#register{
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+#link {
+  margin-top: 30px;
+}
