@@ -63,8 +63,7 @@ export class AuthService {
   }
 
   setSession(res) {
-    localStorage.setItem('token', res.token);
-    localStorage.setItem('id', res.id);
+    localStorage.setItem('token', res.auth_token);
   }
 
   //Para comprobar que se inicio sesión
