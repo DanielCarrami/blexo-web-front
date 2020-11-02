@@ -33,6 +33,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { EditarUsuarioComponent } from './editar-usuario/editar-usuario.component'; 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ScrollingModule } from '@angular/cdk/scrolling';
+import { HttpClientModule, HttpHeaders } from '@angular/common/http';
 
 import { MatButtonModule } from '@angular/material/button';
 
@@ -73,7 +74,8 @@ import { MatButtonModule } from '@angular/material/button';
     ReactiveFormsModule,
     ScrollingModule,
     MatFormFieldModule,
-    MatButtonModule
+    MatButtonModule,
+    HttpClientModule
   ],
   entryComponents:[EditarSesionComponent, VerSesionComponent, CrearSesionComponent, EditarUsuarioComponent],
   providers: [
