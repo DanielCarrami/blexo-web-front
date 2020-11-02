@@ -37,6 +37,10 @@ export class InicioSesionComponent implements OnInit {
     this.router.navigate(['/proyecto']);
   }
 
+  registro(){
+    this.router.navigate(['/registro']);
+  }
+
   ngOnInit(): void {
     
   }

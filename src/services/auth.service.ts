@@ -11,9 +11,17 @@ export class AuthService {
 
   constructor(private http: HttpClient) {
     this.URL = 'http://34.72.72.137:8000/auth/';
-    this.headers = new HttpHeaders({
-      'Content-Type': 'application/json'
-    });
+    if(this.isLoggedIn()){
+      this.headers = new HttpHeaders({
+        'Content-Type': 'application/x-www-form-urlencoded',
+        Authorization: 'Token ' + this.getToken()
+      });
+    }else{
+      this.headers = new HttpHeaders({
+        'Content-Type': 'application/x-www-form-urlencoded'
+      });
+    }
+    
   }
 
   //Log in con usuario ya existente
@@ -24,15 +32,23 @@ export class AuthService {
     };
     console.log(body)
     return this.http.post(
-      this.URL + 'token/login',
+      this.URL + 'token/login/',
       body
     );
   }
-  
+
+  logout(){
+    return this.http.post(
+      this.URL + 'token/logout/', null, {
+        headers: this.headers
+      }
+    );
+  }
+
   //Realizar registro de un nuevo usuario
   registro(username: string,first_name: string, last_name: string, email: string, password: string, re_password: string) {
     const body = {
-      username: username,
+      username: first_name + last_name,
       first_name: first_name,
       last_name: last_name,
       email: email,
@@ -59,4 +75,7 @@ export class AuthService {
     return true;
   }
 
+  getToken() {
+    return localStorage.getItem('token');
+  }
 }
