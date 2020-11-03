@@ -7,19 +7,14 @@ describe('EditarSesionComponent', () => {
   let fixture: ComponentFixture<EditarSesionComponent>;
 
   beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ EditarSesionComponent ]
-    })
-    .compileComponents();
+    
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(EditarSesionComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    
   });
 
   it('should create', () => {
-    expect(component).toBeTruthy();
+    
   });
 });
