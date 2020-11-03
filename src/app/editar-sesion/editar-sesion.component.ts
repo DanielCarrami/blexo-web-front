@@ -24,11 +24,17 @@ export class EditarSesionComponent implements OnInit {
 
   editarsesion(){
     console.log(this.sesion)
-    this.crudService.update(Model.SESION,1,this.sesion)
+    this.crudService.update(Model.SESION,2,this.sesion)
     .subscribe(res => {
     console.log("confirmado")
     })
     
+  }
+  borrar(){
+    this.crudService.delete(Model.SESION,2)
+    .subscribe(res => {
+    console.log("confirmado")
+    })
   }
 
 }

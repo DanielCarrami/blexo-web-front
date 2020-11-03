@@ -63,7 +63,8 @@ export class CrudService {
 
   delete(model: string, id: any) {
     return this.http.delete(this.URL + model + "/" + id + "/", {
-      headers: this.headers
+      headers: {'Content-Type': 'application/x-www-form-urlencoded',
+      Authorization: 'Token f86f879e56e96c62831ba240859c5a7a0f0bac5a'}
     });
   }
 }

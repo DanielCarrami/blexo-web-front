@@ -76,7 +76,7 @@ export class VerSesionComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.crudService.get_one(Model.SESION,1)
+    this.crudService.get_one(Model.SESION,2)
     .then(res => {
     this.sesiones = res.data;
     console.log(this.sesiones);

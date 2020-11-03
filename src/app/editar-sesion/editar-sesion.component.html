@@ -15,9 +15,8 @@
     <textarea style= "width: 260px" matInput [(ngModel)]="sesion.descripcion" name="descripcion" placeholder="Ex. It makes me feel..."></textarea>
   </mat-form-field>
 
-  <button mat-button style="margin:5%">Editar</button>
-  <br>
-  <button mat-button style="margin:5%" type="submit">Eliminar Experimento</button>
-
+  <button mat-button style="margin:5%"  type="submit">Editar</button>
+  
 </form>
+<button mat-button style="margin:5%" (click)="borrar()">Eliminar Experimento</button>
 </div>
