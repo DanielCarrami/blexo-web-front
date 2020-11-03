@@ -6,6 +6,6 @@ export class Sesion {
         public descripcion: string,
         public edad: number,
         public sexo: string,
-        public experimentos: Experimento[]
+        public proyecto: number
     ) { }
 }
