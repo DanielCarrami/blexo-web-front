@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { CreateProjectComponent } from '../create-project/create-project.component';
 import { MatDialog } from '@angular/material/dialog';
 import { EditProjectComponent } from '../edit-project/edit-project.component';
-import {Router} from '@angular/router'
+import { CrudService, Model } from '../../services/crud.service';
+import {Router} from '@angular/router';
 // added provider
 @Component({
   selector: 'app-project-view',
@@ -12,8 +13,10 @@ import {Router} from '@angular/router'
 })
 export class ProjectViewComponent implements OnInit {
 
-  constructor(public dialog: MatDialog, private router: Router) { }
-  proyectos = [
+  proyectos: any[] = [];
+  constructor(public dialog: MatDialog, private router: Router, private crudService: CrudService) { }
+
+  proyecto = [
     {
       label: "First",
       title: "Proyecto 1",
@@ -73,6 +76,14 @@ export class ProjectViewComponent implements OnInit {
     }
   ];
   ngOnInit(): void {
+    this.crudService.get_all(Model.PROYECTO)
+    .then(res => {
+    this.proyectos = res.data;
+    console.log(this.proyectos);
+    })
+    .catch(err => {
+    console.log(err);
+    });
   }
   nuevoProyecto(): void{
     this.dialog.open(CreateProjectComponent, {
@@ -87,6 +98,6 @@ export class ProjectViewComponent implements OnInit {
   }
 
   verSesion(): void{
-    this.router.navigate(['/sesion'])
+    this.router.navigate(['/sesion']);
   }
 }
