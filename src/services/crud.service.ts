@@ -56,9 +56,9 @@ export class CrudService {
   }
 
   update(model: string, id: any, body: any) {
-    return this.http.put(this.URL + model + "/" + id + "/", body, {
-      headers: this.headers
-    });
+    console.log(body)
+    return this.http.put(this.URL + model + "/" + id + "/", body, {headers:{'Content-Type': 'application/x-www-form-urlencoded',
+    Authorization: 'Token f86f879e56e96c62831ba240859c5a7a0f0bac5a'}});
   }
 
   delete(model: string, id: any) {

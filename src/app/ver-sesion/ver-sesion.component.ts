@@ -79,7 +79,7 @@ export class VerSesionComponent implements OnInit {
     this.crudService.get_one(Model.SESION,1)
     .then(res => {
     this.sesiones = res.data;
-    console.log(this.sesiones["descripcion"]);
+    console.log(this.sesiones);
     })
     .catch(err => {
     console.log(err);
