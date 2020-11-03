@@ -52,6 +52,7 @@ export class CrudService {
 
   post_one(model: Model, body){
     let url = this.URL + model + '/';
+    console.log(body);
     return axios.post(url,body,{headers:{'Content-Type': 'application/x-www-form-urlencoded',
     Authorization: 'Token f86f879e56e96c62831ba240859c5a7a0f0bac5a'}});
   }

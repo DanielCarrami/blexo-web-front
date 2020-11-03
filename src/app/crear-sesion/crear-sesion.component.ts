@@ -14,7 +14,7 @@ export class CrearSesionComponent implements OnInit {
     descripcion: '',
     edad: 20,
     sexo: "M",
-    proyecto: 5
+    proyecto: 1
   }
   constructor(private crudService: CrudService) { }
 
