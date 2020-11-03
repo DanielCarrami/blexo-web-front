@@ -18,6 +18,11 @@ export class CrudService {
 
   constructor(private auth: AuthService, private http: HttpClient) {
     this.URL = 'http://34.72.72.137:8000/api/';
+    this.headers = new HttpHeaders({
+      'Content-Type': 'application/x-www-form-urlencoded',
+      Authorization: 'Token f86f879e56e96c62831ba240859c5a7a0f0bac5a'
+    });
+    /*
     if(this.auth.isLoggedIn()){
       this.headers = new HttpHeaders({
         'Content-Type': 'application/x-www-form-urlencoded',
@@ -28,18 +33,21 @@ export class CrudService {
         'Content-Type': 'application/x-www-form-urlencoded'
       });
     }
-    
+    */
     
   }
 
   get_all(model: Model) {
     let url = this.URL + model + '/';
-    return axios.get(url);
+    console.log(this.headers);
+    return axios.get(url,{headers:{'Content-Type': 'application/x-www-form-urlencoded',
+    Authorization: 'Token f86f879e56e96c62831ba240859c5a7a0f0bac5a'}});
   }
 
   get_one(model: Model, id: number, params?){
     let url = this.URL + model + '/' + id + '/';
-    return axios.get(url)
+    return axios.get(url, {headers:{'Content-Type': 'application/x-www-form-urlencoded',
+    Authorization: 'Token f86f879e56e96c62831ba240859c5a7a0f0bac5a'}})
   }
 
   post_one(model: Model, body){

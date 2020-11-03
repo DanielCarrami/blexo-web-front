@@ -11,16 +11,22 @@ export class AuthService {
 
   constructor(private http: HttpClient) {
     this.URL = 'http://34.72.72.137:8000/auth/';
+    this.headers = new HttpHeaders({
+      'Content-Type': 'application/x-www-form-urlencoded',
+      Authorization: 'Token f86f879e56e96c62831ba240859c5a7a0f0bac5a'
+    });
+    /*
+    console.log(this.headers);
     if(this.isLoggedIn()){
       this.headers = new HttpHeaders({
         'Content-Type': 'application/x-www-form-urlencoded',
-        Authorization: 'Token ' + this.getToken()
+        Authorization: 'Token f86f879e56e96c62831ba240859c5a7a0f0bac5a'
       });
     }else{
       this.headers = new HttpHeaders({
         'Content-Type': 'application/x-www-form-urlencoded'
       });
-    }
+    } */
     
   }
 
