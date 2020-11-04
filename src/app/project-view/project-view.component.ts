@@ -86,14 +86,20 @@ export class ProjectViewComponent implements OnInit {
     });
   }
   nuevoProyecto(): void{
-    this.dialog.open(CreateProjectComponent, {
+    const dialogRef = this.dialog.open(CreateProjectComponent, {
       width: '450px'
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
     });
   }
 
   editarProyecto(): void{
-    this.dialog.open(EditProjectComponent, {
+    const dialogRef = this.dialog.open(EditProjectComponent, {
       width: '450px'
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
     });
   }
 
