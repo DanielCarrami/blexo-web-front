@@ -5,6 +5,7 @@
   <br>
 </div>
 <button type="button" mat-raised-button (click)="nuevoProyecto()" class="btn btn-outline-success" id="boton">Agregar proyecto</button>
+<button style="margin:10px" type="button" mat-raised-button (click)="popup()" class="btn btn-outline-success" id="boton2">Agregar Sesion</button>
 <mat-tab-group>
     <mat-tab *ngFor="let proyecto of proyectos" label={{proyecto.id}}>
       <mat-card>
