@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormBuilder, Validators } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-registro',
@@ -19,7 +20,7 @@ export class RegistroComponent implements OnInit {
   hide = true;
   hideconfirm = true;
 
-  constructor(private auth: AuthService) { }
+  constructor(private auth: AuthService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -52,6 +53,9 @@ export class RegistroComponent implements OnInit {
     this.password.value === this.confirmpassword.value ? 'Las contraseñas no coinciden' : '';    
     this.auth.registro('', this.name.value, this.lastname.value, this.email.value, 
       this.password.value, this.password.value).subscribe(res => console.log("hola" + res));
+      
+      this.auth.login(this.email.value, this.password.value).subscribe( res => this.auth.setSession(res));
+        this.auth.isLoggedIn() ? this.router.navigate(['/proyecto']) : console.log("No se encontró ningun token");
   }
 
 
