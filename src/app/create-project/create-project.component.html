@@ -1,15 +1,15 @@
-<form>
+<form (submit) = crearProyecto()>
   <h1>Nuevo Proyecto</h1>
 
   <mat-form-field style="width: 100% !important;">
     <mat-label>Name</mat-label>
-    <input matInput placeholder="Name" name="name">
+    <input matInput [(ngModel)]='proyectonuevo.nombre' name= "nombre" placeholder="Nombre">
   </mat-form-field>
 
   <mat-form-field style="width: 100% !important;">
     <mat-label>Description</mat-label>
-    <textarea matInput type="text" placeholder="Description" name="description"></textarea>
+    <textarea style= "width: 260px" matInput [(ngModel)]='proyectonuevo.descripcion' name="descripcion" placeholder="Descripcion"></textarea>
   </mat-form-field>
 
-  <button mat-raised-button color="primary">Guardar</button>
+  <button mat-raised-button color="primary" type="submit">Guardar</button>
 </form>

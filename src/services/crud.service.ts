@@ -34,7 +34,7 @@ export class CrudService {
       });
     }
     */
-    
+
   }
 
   get_all(model: Model) {
@@ -58,7 +58,7 @@ export class CrudService {
   }
 
   update(model: string, id: any, body: any) {
-    console.log(body)
+    console.log(body);
     return this.http.put(this.URL + model + "/" + id + "/", body, {headers:{'Content-Type': 'application/json',
     Authorization: 'Token f86f879e56e96c62831ba240859c5a7a0f0bac5a'}});
   }
