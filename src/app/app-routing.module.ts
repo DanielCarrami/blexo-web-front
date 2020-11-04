@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { VerSesionComponent } from './ver-sesion/ver-sesion.component';
+import { CrearSesionComponent } from './crear-sesion/crear-sesion.component';
 
 import { InicioSesionComponent } from './inicio-sesion/inicio-sesion.component';
 import { RegistroComponent } from './registro/registro.component';
@@ -14,6 +15,7 @@ const routes: Routes = [
   {path: 'proyecto', component: ProjectViewComponent},
   {path: 'sesion', component: VerSesionComponent},
   {path: 'registro', component: RegistroComponent},
+  {path: 'creacion', component: CrearSesionComponent},
 ];
 
 @NgModule({
