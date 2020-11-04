@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router'
 
 import {FormControl, Validators} from '@angular/forms';
-
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-inicio-sesion',
@@ -27,14 +27,23 @@ export class InicioSesionComponent implements OnInit {
     return this.email.hasError('email') ? 'No es un correo electronico valido' : '';
   }
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private auth: AuthService) { }
 
   login(){
     console.log(
       "Email: " + this.user.email.toString(),
       "\nClave: " + this.user.clave.toString()
     );
-    this.router.navigate(['/proyecto']);
+    this.auth.login(this.user.email, this.user.clave).subscribe( res => 
+      this.auth.setSession(res)
+      );
+      if (this.auth.isLoggedIn()){ this.router.navigate(['/proyecto']); } 
+      else {console.log("No se encontró ningun token");}
+    
+  }
+
+  registro(){
+    this.router.navigate(['/registro']);
   }
 
   ngOnInit(): void {
