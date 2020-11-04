@@ -23,9 +23,9 @@
   </mat-form-field>
 
   <p>Sexo</p>
-  <mat-form-field appearance="fill" matInput [(ngModel)]="sesion.sexo" name="sexo">
+  <mat-form-field appearance="fill" >
   <mat-label>Sexo</mat-label>
-  <select matNativeControl required>
+  <select matNativeControl required [(ngModel)]="sesion.sexo" name ="sexo">
     <option value="M">Hombre</option>
     <option value="F">Mujer</option>
   </select>
