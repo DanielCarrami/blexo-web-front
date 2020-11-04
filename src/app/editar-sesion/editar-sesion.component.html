@@ -15,6 +15,21 @@
     <textarea style= "width: 260px" matInput [(ngModel)]="sesion.descripcion" name="descripcion" placeholder="Ex. It makes me feel..."></textarea>
   </mat-form-field>
 
+  
+  <p>Edad</p>
+  <mat-form-field>
+    <mat-label>Edad</mat-label>
+    <input matInput [(ngModel)]="sesion.edad" name="edad" placeholder="Nombre">
+  </mat-form-field>
+
+  <p>Sexo</p>
+  <mat-form-field appearance="fill" matInput [(ngModel)]="sesion.sexo" name="sexo">
+  <mat-label>Sexo</mat-label>
+  <select matNativeControl required>
+    <option value="M">Hombre</option>
+    <option value="F">Mujer</option>
+  </select>
+  </mat-form-field>
   <button mat-button style="margin:5%"  type="submit">Editar</button>
   
 </form>
