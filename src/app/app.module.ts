@@ -30,12 +30,14 @@ import { RegistroComponent } from './registro/registro.component';
 import { HeaderComponent } from './core/header/header.component';
 
 import { MatMenuModule } from '@angular/material/menu';
-import { EditarUsuarioComponent } from './editar-usuario/editar-usuario.component'; 
+import { EditarUsuarioComponent } from './editar-usuario/editar-usuario.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { HttpClientModule, HttpHeaders } from '@angular/common/http';
 
 import { MatButtonModule } from '@angular/material/button';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -75,7 +77,9 @@ import { MatButtonModule } from '@angular/material/button';
     ScrollingModule,
     MatFormFieldModule,
     MatButtonModule,
-    HttpClientModule
+    HttpClientModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   entryComponents:[EditarSesionComponent, VerSesionComponent, CrearSesionComponent, EditarUsuarioComponent],
   providers: [

@@ -2,35 +2,38 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { CrudService, Model } from '../../services/crud.service';
 import { Proyecto } from '../../models/proyecto';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {formatDate} from '@angular/common';
 
 // added provider
 @Component({
   selector: 'app-create-project',
   templateUrl: './create-project.component.html',
   styleUrls: ['./create-project.component.scss'],
-  providers: [MatDialog]
+  providers: [MatDialog, MatDatepickerModule]
 })
 export class CreateProjectComponent implements OnInit {
   prueba: any[] [];
-  proyectonuevo = {
+  date = formatDate(new Date(), 'yyyy-MM-dd', 'en');
+  proyecto = {
     nombre: '',
     descripcion: '',
-    fecha_inicio: '2020-11-03',
+    fecha_inicio: this.date,
     sesiones: []
   };
-  private proyecto: Proyecto;
 
   constructor(private crudService: CrudService) { }
 
   ngOnInit(): void {
-    this.proyecto = new Proyecto("Proyecto prueba 2","Esto es otra prueba probosa", "2020-11-03", []);
   }
 
   crearProyecto(){
-    console.log(this.proyecto)
+    console.log(this.proyecto);
+    console.log(this.date);
     this.crudService.post_one(Model.PROYECTO, this.proyecto)
         .then(res => {
-        this.prueba = res.data;
+        this.proyecto = res.data;
+        this.date;
         console.log("Funciona");
         })
         .catch(err => {

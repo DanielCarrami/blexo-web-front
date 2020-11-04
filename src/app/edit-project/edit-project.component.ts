@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { CrudService, Model } from '../../services/crud.service';
 
 // added provider
 @Component({
