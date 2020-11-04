@@ -13,7 +13,7 @@ export class CrearSesionComponent implements OnInit {
     nombre: '',
     descripcion: '',
     edad: 20,
-    sexo: "M",
+    sexo: "",
     proyecto: 1
   }
   private sesion:Sesion;
@@ -26,14 +26,14 @@ export class CrearSesionComponent implements OnInit {
   crearsesion(){
     console.log(this.sesionnueva);
     console.log(this.sesion)
-    this.crudService.post_one(Model.SESION,this.sesion)
+    /*this.crudService.post_one(Model.SESION,this.sesionnueva)
         .then(res => {
         this.prueba = res.data;
         console.log("Funciona");
         })
         .catch(err => {
         console.log(err);
-      });
+      });*/
   }
 
 }
