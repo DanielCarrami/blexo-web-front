@@ -12,16 +12,6 @@
     </mat-card>
     <div class="graph-container">
         <div style="display: block">
-          <!--
-            <canvas baseChart height="200px" width ="600"
-            [datasets]="barChartData"
-            [labels]="barChartLabels"
-            [options]="barChartOptions"
-            [legend]="barChartLegend"
-            [chartType]="barChartType">
-          </canvas>
-          -->
-          
           <svg width="900" height="500"></svg>
 
         </div>
@@ -32,7 +22,7 @@
         <mat-card-content>
           <p>{{exp.content}}</p>
         </mat-card-content>
-        <button id="boton" type="button" mat-raised-button class="btn btn-outline-success">Ver más</button>
+        <button id="boton" type="button" mat-raised-button class="btn btn-outline-success" (click)="this.printResult()">Ver más</button>
       </mat-card>
     </div>
 </div>

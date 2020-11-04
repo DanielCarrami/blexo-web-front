@@ -38,6 +38,7 @@ import { HttpClientModule, HttpHeaders } from '@angular/common/http';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { ResultadoComponent } from './resultado/resultado.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { MatNativeDateModule } from '@angular/material/core';
     RegistroComponent,
     InicioSesionComponent,
     HeaderComponent,
-    EditarUsuarioComponent
+    EditarUsuarioComponent,
+    ResultadoComponent
   ],
   imports: [
     BrowserModule,
