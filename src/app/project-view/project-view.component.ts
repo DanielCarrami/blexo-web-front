@@ -4,6 +4,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { EditProjectComponent } from '../edit-project/edit-project.component';
 import { CrudService, Model } from '../../services/crud.service';
 import {Router} from '@angular/router';
+import { CrearSesionComponent } from '../crear-sesion/crear-sesion.component';
 // added provider
 @Component({
   selector: 'app-project-view',
@@ -105,5 +106,13 @@ export class ProjectViewComponent implements OnInit {
 
   verSesion(): void{
     this.router.navigate(['/sesion']);
+  }
+
+  popup(){
+    const dialogRef = this.dialog.open(CrearSesionComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
   }
 }
