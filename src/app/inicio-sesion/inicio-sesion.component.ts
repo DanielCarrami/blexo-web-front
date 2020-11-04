@@ -35,7 +35,6 @@ export class InicioSesionComponent implements OnInit {
       "\nClave: " + this.user.clave.toString()
     );
     this.auth.login(this.user.email, this.user.clave).subscribe( res => 
-      // console.log("this is the result:" + res)
       this.auth.setSession(res)
       );
       if (this.auth.isLoggedIn()){ this.router.navigate(['/proyecto']); } 
