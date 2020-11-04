@@ -4,6 +4,7 @@ export class Proyecto{
     constructor(
         public nombre: string,
         public descripcion: string,
-        public sesiones: Sesion[]
+        public fecha_inicio: Date,
+        public sesion: Sesion[]
     ) { }
 }

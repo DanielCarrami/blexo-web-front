@@ -6,23 +6,28 @@
 </div>
 <button type="button" mat-raised-button (click)="nuevoProyecto()" class="btn btn-outline-success" id="boton">Agregar proyecto</button>
 <mat-tab-group>
-    <mat-tab *ngFor="let proyecto of proyectos" label={{proyecto.label}}>
+    <mat-tab *ngFor="let proyecto of proyectos" label={{proyecto.id}}>
       <mat-card>
-        <mat-card-title>{{proyecto.title}}</mat-card-title>
+        <mat-card-title>{{proyecto.nombre}}</mat-card-title>
           <mat-card-content>
-            {{proyecto.content}}
+            {{proyecto.descripcion}}
+            <br>
+            {{proyecto.fecha_inicio}}
           </mat-card-content>
       </mat-card>
       <div class="sesion-grid">
         <mat-card *ngFor="let sesion of proyecto.sesiones" class="sesion-card">
-          <mat-card-title>{{sesion.title}}</mat-card-title>
-          <button id="boton" type="button" mat-raised-button class="btn btn-outline-success" (click)="this.verSesion()">Ver más</button>
+          <mat-card-title >{{sesion}}</mat-card-title>
           <mat-card-content>
-            <p>{{sesion.content}}</p>
+            <img class="card-img-top" [src]="'../../assets/person.jpg'">
           </mat-card-content>
-          
+          <button id="boton" type="button" mat-raised-button class="btn btn-outline-success" (click)="this.verSesion()">Ver más</button>
+
         </mat-card>
       </div>
+      <br>
+        <button id="boton" type="button" mat-raised-button class="btn btn-outline-success">Crear sesion</button>
+        <br> <br>
     </mat-tab>
 </mat-tab-group>
 <div>
