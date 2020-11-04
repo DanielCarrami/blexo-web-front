@@ -73,7 +73,7 @@ export class VerSesionComponent implements OnInit {
   ) { 
     this.width = 960 - this.margin.left - this.margin.right;
     this.height = 500 - this.margin.top - this.margin.bottom;
-  }
+  } 
 
   ngOnInit(): void {
 
