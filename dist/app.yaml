@@ -1,0 +1,11 @@
+# [START runtime]
+runtime: python27
+api_version: 1
+threadsafe: yes
+# [END runtime]
+handlers:
+- url: /
+  static_files: blexo-web-front/index.html
+  upload: blexo-web-front/index.html
+- url: /
+  static_dir: blexo-web-front/index.html
