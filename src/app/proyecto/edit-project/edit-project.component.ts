@@ -1,6 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { CrudService, Model } from '../../services/crud.service';
+import { CrudService, Model } from '../../../services/crud.service';
 import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
 import {formatDate} from '@angular/common';
 

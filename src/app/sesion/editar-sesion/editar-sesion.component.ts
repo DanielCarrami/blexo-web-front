@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CrudService, Model } from '../../services/crud.service';
+import { CrudService, Model } from '../../../services/crud.service';
 
 @Component({
   selector: 'app-editar-sesion',

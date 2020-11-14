@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { CrudService, Model } from '../../services/crud.service';
-import { Proyecto } from '../../models/proyecto';
+import { CrudService, Model } from '../../../services/crud.service';
+import { Proyecto } from '../../../models/proyecto';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {formatDate} from '@angular/common';
 

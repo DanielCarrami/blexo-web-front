@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { CreateProjectComponent } from '../create-project/create-project.component';
 import { MatDialog } from '@angular/material/dialog';
 import { EditProjectComponent } from '../edit-project/edit-project.component';
-import { CrudService, Model } from '../../services/crud.service';
-import {Router} from '@angular/router';
-import { CrearSesionComponent } from '../crear-sesion/crear-sesion.component';
-import { AuthService } from '../../services/auth.service';
+import { CrudService, Model } from '../../../services/crud.service';
+import { Router } from '@angular/router';
+import { CrearSesionComponent } from '../../sesion/crear-sesion/crear-sesion.component';
+import { AuthService } from '../../../services/auth.service';
 
 // added provider
 @Component({

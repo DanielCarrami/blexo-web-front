@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { VerSesionComponent } from './ver-sesion/ver-sesion.component';
-import { CrearSesionComponent } from './crear-sesion/crear-sesion.component';
+import { VerSesionComponent } from './sesion/ver-sesion/ver-sesion.component';
+import { CrearSesionComponent } from './sesion/crear-sesion/crear-sesion.component';
 
-import { InicioSesionComponent } from './inicio-sesion/inicio-sesion.component';
-import { RegistroComponent } from './registro/registro.component';
+import { InicioSesionComponent } from './login/inicio-sesion/inicio-sesion.component';
+import { RegistroComponent } from './login/registro/registro.component';
 
-import { ProjectViewComponent } from './project-view/project-view.component';
+import { ProjectViewComponent } from './proyecto/project-view/project-view.component';
 
 
 const routes: Routes = [

@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { CrudService, Model } from '../../services/crud.service';
-import {Sesion} from '../../models/sesion';
+import { CrudService, Model } from '../../../services/crud.service';
+import {Sesion} from '../../../models/sesion';
 @Component({
   selector: 'app-crear-sesion',
   templateUrl: './crear-sesion.component.html',
   styleUrls: ['./crear-sesion.component.scss']
 })
 export class CrearSesionComponent implements OnInit {
-
+ 
   prueba: any[] [];
   sesionnueva = {
     nombre: '',
@@ -26,14 +26,7 @@ export class CrearSesionComponent implements OnInit {
   crearsesion(){
     console.log(this.sesionnueva);
     console.log(this.sesion)
-    /*this.crudService.post_one(Model.SESION,this.sesionnueva)
-        .then(res => {
-        this.prueba = res.data;
-        console.log("Funciona");
-        })
-        .catch(err => {
-        console.log(err);
-      });*/
+
   }
 
 }

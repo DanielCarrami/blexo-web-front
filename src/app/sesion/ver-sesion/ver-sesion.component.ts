@@ -1,10 +1,10 @@
 import { Component, OnInit} from '@angular/core';
 import { ChartOptions, ChartType, ChartDataSets } from 'chart.js';
-import { CrudService, Model } from '../../services/crud.service';
+import { CrudService, Model } from '../../../services/crud.service';
 import { Label } from 'ng2-charts';
 import {MatDialog,MatDialogConfig} from '@angular/material/dialog';
 import { EditarSesionComponent } from '../editar-sesion/editar-sesion.component';
-import {ResultadoComponent} from '../resultado/resultado.component';
+import {ResultadoComponent} from '../../resultado/resultado.component';
 
 import * as d3 from 'd3';
 import * as d3Scale from 'd3';

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
-import { EditarUsuarioComponent } from 'src/app/editar-usuario/editar-usuario.component';
+import { EditarUsuarioComponent } from '../../login/editar-usuario/editar-usuario.component';
 
 import { AuthService } from '../../../services/auth.service';
 
