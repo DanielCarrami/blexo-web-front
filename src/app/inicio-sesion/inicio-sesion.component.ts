@@ -34,11 +34,18 @@ export class InicioSesionComponent implements OnInit {
       "Email: " + this.user.email.toString(),
       "\nClave: " + this.user.clave.toString()
     );
-    this.auth.login(this.user.email, this.user.clave).then( res => 
-      this.auth.setSession(res)
-      );
-      if (this.auth.isLoggedIn()){ this.router.navigate(['/proyecto']); } 
-      else {console.log("No se encontró ningun token");}
+    this.auth.login(this.user.email, this.user.clave).then( res => {
+      if(res.data.auth_token){
+        this.auth.setSession(res.data)
+      }else{
+        console.log("Error al iniciar sesión: ", res.data);
+      }
+    });
+    if (this.auth.isLoggedIn()){ 
+      this.router.navigate(['/proyecto']); 
+    }else{
+      console.log("No se encontró ningun token");
+    }
     
   }
 

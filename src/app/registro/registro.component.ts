@@ -21,7 +21,8 @@ export class RegistroComponent implements OnInit {
   hideconfirm = true;
 
   constructor(
-    private auth: AuthService, private router: Router
+    private auth: AuthService, 
+    private router: Router
   ) { }
 
   ngOnInit(): void {
