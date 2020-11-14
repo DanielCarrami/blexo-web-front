@@ -10,7 +10,7 @@ export class AuthService {
   headers: HttpHeaders;
 
   constructor(private http: HttpClient) {
-    this.URL = 'http://34.72.72.137:8000/auth/';
+    this.URL = 'http://localhost:8000/auth/';
     this.headers = new HttpHeaders({
       'Content-Type': 'application/x-www-form-urlencoded',
       Authorization: 'Token f86f879e56e96c62831ba240859c5a7a0f0bac5a'
@@ -37,7 +37,7 @@ export class AuthService {
       password: password
     };
     console.log(body)
-    return this.http.post(
+    return axios.post(
       this.URL + 'token/login/',
       body
     );
@@ -62,7 +62,7 @@ export class AuthService {
       re_password: re_password
     };
     console.log(body)
-    return this.http.post(
+    return axios.post(
       this.URL + 'users/',
       body
     );

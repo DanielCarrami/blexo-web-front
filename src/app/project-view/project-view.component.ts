@@ -5,6 +5,8 @@ import { EditProjectComponent } from '../edit-project/edit-project.component';
 import { CrudService, Model } from '../../services/crud.service';
 import {Router} from '@angular/router';
 import { CrearSesionComponent } from '../crear-sesion/crear-sesion.component';
+import { AuthService } from '../../services/auth.service';
+
 // added provider
 @Component({
   selector: 'app-project-view',
@@ -15,7 +17,13 @@ import { CrearSesionComponent } from '../crear-sesion/crear-sesion.component';
 export class ProjectViewComponent implements OnInit {
 
   proyectos: any[] = [];
-  constructor(public dialog: MatDialog, private router: Router, private crudService: CrudService) { }
+
+  constructor(
+    public dialog: MatDialog, 
+    private router: Router, 
+    private crudService: CrudService,
+    private auth: AuthService
+  ) { }
 
   proyecto = [
     {
@@ -77,6 +85,7 @@ export class ProjectViewComponent implements OnInit {
     }
   ];
   ngOnInit(): void {
+    console.log("Se logó?",this.auth.getToken());
     this.crudService.get_all(Model.PROYECTO)
     .then(res => {
     this.proyectos = res.data;

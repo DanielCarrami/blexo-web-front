@@ -20,7 +20,9 @@ export class RegistroComponent implements OnInit {
   hide = true;
   hideconfirm = true;
 
-  constructor(private auth: AuthService, private router: Router) { }
+  constructor(
+    private auth: AuthService, private router: Router
+  ) { }
 
   ngOnInit(): void {
   }
@@ -52,10 +54,24 @@ export class RegistroComponent implements OnInit {
    checkPasswords() { 
     this.password.value === this.confirmpassword.value ? 'Las contraseñas no coinciden' : '';    
     this.auth.registro('', this.name.value, this.lastname.value, this.email.value, 
-      this.password.value, this.password.value).subscribe(res => console.log("hola" + res));
-      
-      this.auth.login(this.email.value, this.password.value).subscribe( res => this.auth.setSession(res));
-        this.auth.isLoggedIn() ? this.router.navigate(['/proyecto']) : console.log("No se encontró ningun token");
+      this.password.value, this.password.value).then(
+        res => {
+          if(res.data.email){
+            this.auth.login(res.data.email, this.password.value)
+              .then(res=>{
+                console.log(res.data);
+                if(res.data.auth_token){
+                  this.auth.setSession(res.data);
+                  this.router.navigate(['/proyecto']);
+                }else{
+                  console.log("Error por alguna extraña razón pero sobres");
+                }
+              });
+          }else{
+            console.log("EEEEERRRROOOOOOOOOOOOOOORR")
+          }
+        }
+      );
   }
 
 

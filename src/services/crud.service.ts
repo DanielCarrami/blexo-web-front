@@ -17,7 +17,7 @@ export class CrudService {
   headers: HttpHeaders;
 
   constructor(private auth: AuthService, private http: HttpClient) {
-    this.URL = 'http://34.72.72.137:8000/api/';
+    this.URL = 'http://localhost:8000/api/';
     this.headers = new HttpHeaders({
       'Content-Type': 'application/x-www-form-urlencoded',
       Authorization: 'Token f86f879e56e96c62831ba240859c5a7a0f0bac5a'
