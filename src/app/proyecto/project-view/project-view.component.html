@@ -1,14 +1,13 @@
 <div class="container">
 <div class="page-header">
   <br><br>
-  <h1 class="title">Proyectos</h1>
+  <h1 class="title">Mis Proyectos</h1>
   <br>
 </div>
 <button type="button" mat-raised-button (click)="nuevoProyecto()" class="btn btn-outline-success" id="boton">Agregar proyecto</button>
-<button style="margin:10px" type="button" mat-raised-button (click)="popup()" class="btn btn-outline-success" id="boton2">Agregar Sesion</button>
 <mat-tab-group>
     <mat-tab *ngFor="let proyecto of proyectos" label={{proyecto.id}}>
-      <mat-card>
+      <mat-card style="background-color: #CAF0F8;">
         <mat-card-title>{{proyecto.nombre}}</mat-card-title>
           <mat-card-content>
             {{proyecto.descripcion}}
@@ -31,9 +30,5 @@
         <br> <br>
     </mat-tab>
 </mat-tab-group>
-<div>
-  <br>
-    <button id="boton" type="button" mat-raised-button (click)="editarProyecto()" class="btn btn-outline-success">Editar proyecto</button>
-  <br><br>
-</div>
+
 </div>

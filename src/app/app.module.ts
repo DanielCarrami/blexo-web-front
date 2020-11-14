@@ -15,6 +15,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatTabsModule } from '@angular/material/tabs';
 import { EditProjectComponent } from './proyecto/edit-project/edit-project.component';
+import {MatSidenavModule} from '@angular/material/sidenav';
 
 import { VerSesionComponent } from './sesion/ver-sesion/ver-sesion.component';
 import { ChartsModule } from 'ng2-charts';
@@ -40,6 +41,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { ResultadoComponent } from './resultado/resultado.component';
+import { SidenavComponent } from './core/sidenav/sidenav.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +57,8 @@ import { ResultadoComponent } from './resultado/resultado.component';
     InicioSesionComponent,
     HeaderComponent,
     EditarUsuarioComponent,
-    ResultadoComponent
+    ResultadoComponent,
+    SidenavComponent
   ],
   imports: [
     BrowserModule,
@@ -77,6 +80,7 @@ import { ResultadoComponent } from './resultado/resultado.component';
     MatIconModule,
     MatMenuModule,
     MatTabsModule,
+    MatSidenavModule,
     ReactiveFormsModule,
     ScrollingModule,
     MatFormFieldModule,
