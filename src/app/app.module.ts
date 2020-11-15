@@ -17,6 +17,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { EditProjectComponent } from './proyecto/edit-project/edit-project.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
 
+import { FlexLayoutModule } from "@angular/flex-layout";
 import { VerSesionComponent } from './sesion/ver-sesion/ver-sesion.component';
 import { ChartsModule } from 'ng2-charts';
 import { EditarSesionComponent } from './sesion/editar-sesion/editar-sesion.component';
@@ -87,7 +88,8 @@ import { SidenavComponent } from './core/sidenav/sidenav.component';
     MatButtonModule,
     HttpClientModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    FlexLayoutModule
   ],
   entryComponents:[EditarSesionComponent, VerSesionComponent, CrearSesionComponent, EditarUsuarioComponent],
   providers: [
