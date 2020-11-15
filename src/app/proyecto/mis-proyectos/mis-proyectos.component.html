@@ -17,12 +17,12 @@
             <p style="font-weight: bold;">Rol:</p>
             <p style="margin-left: 10px;">Lider</p>
             <p style="font-weight: bold;">Descripción:</p>
-            <p style="margin-left: 10px;">{{proyecto.proyecto.descripcion}}</p>
+            <p style="margin-left: 10px; overflow: auto;">{{proyecto.proyecto.descripcion}}</p>
             <p style="font-weight: bold;">Fecha de inicio:</p>
             <p style="margin-left: 10px;">{{proyecto.proyecto.fecha_inicio}}</p>
           </mat-card-content>
           <mat-card-actions>
-            <button mat-button id="boton">Ver mas</button>
+            <button mat-button id="boton" routerLink="/proyecto/{{proyecto.proyecto.id}}">Ver mas</button>
           </mat-card-actions>
         </mat-card>
       </div>

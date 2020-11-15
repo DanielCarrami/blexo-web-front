@@ -8,6 +8,7 @@ import { RegistroComponent } from './login/registro/registro.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProjectViewComponent } from './proyecto/project-view/project-view.component';
 import { MisProyectosComponent } from './proyecto/mis-proyectos/mis-proyectos.component';
+import { OneProjectComponent } from './proyecto/one-project/one-project.component';
 
 const routes: Routes = [
   {path: '', component: InicioSesionComponent},
@@ -17,7 +18,8 @@ const routes: Routes = [
   {path: 'registro', component: RegistroComponent},
   {path: 'mi-proyecto', component: MisProyectosComponent},
   {path: 'creacion', component: CrearSesionComponent},
-  {path: 'dashboard', component: DashboardComponent}
+  {path: 'dashboard', component: DashboardComponent},
+  {path: 'proyecto/:id', component: OneProjectComponent}
 ];
 
 @NgModule({

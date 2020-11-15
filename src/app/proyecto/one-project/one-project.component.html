@@ -1,1 +1,22 @@
-<p>one-project works!</p>
+<div class="container">
+    <div class="page-header">
+        <br><br>
+        <h1 class="title">Detalles de proyecto</h1>
+        <br>
+    </div>
+    <div class="content">
+        <mat-card class="mat-elevation-z4">
+            <mat-card-header>
+                <mat-card-title>{{proyecto.nombre}}</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <p>{{proyecto.descripcion}}</p>
+                <p>{{proyecto.fecha_inicio}}</p>
+                <mat-selection-list *ngFor="let sesion of proyecto.sesiones">
+                    <mat-list-item>{{sesion}}</mat-list-item>
+                  </mat-selection-list> 
+            </mat-card-content>
+        </mat-card>
+    </div>
+    
+</div>

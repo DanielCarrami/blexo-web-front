@@ -16,7 +16,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatTabsModule } from '@angular/material/tabs';
 import { EditProjectComponent } from './proyecto/edit-project/edit-project.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
-
+import {MatListModule} from '@angular/material/list';
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { VerSesionComponent } from './sesion/ver-sesion/ver-sesion.component';
 import { ChartsModule } from 'ng2-charts';
@@ -95,7 +95,8 @@ import { OneProjectComponent } from './proyecto/one-project/one-project.componen
     HttpClientModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatListModule
   ],
   entryComponents:[EditarSesionComponent, VerSesionComponent, CrearSesionComponent, EditarUsuarioComponent],
   providers: [
