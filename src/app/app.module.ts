@@ -44,6 +44,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { ResultadoComponent } from './resultado/resultado.component';
 import { SidenavComponent } from './core/sidenav/sidenav.component';
 import { MisProyectosComponent } from './proyecto/mis-proyectos/mis-proyectos.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,8 @@ import { MisProyectosComponent } from './proyecto/mis-proyectos/mis-proyectos.co
     EditarUsuarioComponent,
     ResultadoComponent,
     SidenavComponent,
-    MisProyectosComponent
+    MisProyectosComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

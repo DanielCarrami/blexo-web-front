@@ -5,7 +5,7 @@ import { CrearSesionComponent } from './sesion/crear-sesion/crear-sesion.compone
 
 import { InicioSesionComponent } from './login/inicio-sesion/inicio-sesion.component';
 import { RegistroComponent } from './login/registro/registro.component';
-
+import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProjectViewComponent } from './proyecto/project-view/project-view.component';
 import { MisProyectosComponent } from './proyecto/mis-proyectos/mis-proyectos.component';
 
@@ -17,6 +17,7 @@ const routes: Routes = [
   {path: 'registro', component: RegistroComponent},
   {path: 'mi-proyecto', component: MisProyectosComponent},
   {path: 'creacion', component: CrearSesionComponent},
+  {path: 'dashboard', component: DashboardComponent}
 ];
 
 @NgModule({

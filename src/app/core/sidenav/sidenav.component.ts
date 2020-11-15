@@ -23,4 +23,8 @@ export class SidenavComponent implements OnInit {
   navigateMiProyecto(){
     this.router.navigate(['/mi-proyecto']);
   }
+
+  navigateDashboard(){
+    this.router.navigate(['/dashboard']);
+  }
 }
