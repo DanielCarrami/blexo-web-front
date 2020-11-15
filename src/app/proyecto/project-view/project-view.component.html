@@ -21,7 +21,7 @@
         <p style="font-weight: bold;">Sesiones:</p>
         <div *ngIf="proyecto.sesiones.length == 0">Todavia no hay sesiones iniciadas</div>
           <mat-list *ngFor="let sesion of proyecto.sesiones">
-            <mat-list-item>{{sesion}}</mat-list-item>
+            <mat-list-item>{{sesion.nombre}}</mat-list-item>
           </mat-list> 
 
       </mat-card-content>

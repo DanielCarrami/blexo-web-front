@@ -9,12 +9,24 @@
             <mat-card-header>
                 <mat-card-title>{{proyecto.nombre}}</mat-card-title>
             </mat-card-header>
-            <mat-card-content>
+            <mat-card-content style="margin-left: 15px;">
+                <br>
+                <p style="font-weight: bold;">Descripcion:</p>
                 <p>{{proyecto.descripcion}}</p>
+                 
+                <p style="font-weight: bold;">Fecha de inicio:</p>
                 <p>{{proyecto.fecha_inicio}}</p>
+                <p style="font-weight: bold;">Sesiones:</p>
                 <mat-selection-list *ngFor="let sesion of proyecto.sesiones">
-                    <mat-list-item>{{sesion}}</mat-list-item>
+                    <mat-list-item>
+                        <button id="button" mat-button>
+                            <span style="font-weight: bold;">{{sesion.nombre}}:</span>&nbsp;{{sesion.descripcion}}
+                        </button>
+                        <button mat-button id="boton" routerLink="/proyecto/{{sesion.id}}">Ver mas</button>
+                    </mat-list-item>
                   </mat-selection-list> 
+                  <br><br>
+                  <button mat-button id="boton" >Crear una nueva sesión</button>
             </mat-card-content>
         </mat-card>
     </div>
