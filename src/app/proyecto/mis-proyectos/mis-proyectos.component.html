@@ -4,9 +4,9 @@
       <h1 class="title">Mis Proyectos</h1>
       <br>
     </div>
-    
+    <span style="margin-left: 80px;">
     <button type="button" mat-raised-button (click)="nuevoProyecto()" class="btn btn-outline-success" id="boton">Agregar proyecto</button>
-    
+    </span>
     <div class="content" fxLayout="row wrap" fxLayoutGap="16px grid">
       <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let proyecto of proyectos" >
         <mat-card class="mat-elevation-z4" >
@@ -22,7 +22,7 @@
             <p style="margin-left: 10px;">{{proyecto.proyecto.fecha_inicio}}</p>
           </mat-card-content>
           <mat-card-actions>
-            <button mat-button>Ver mas</button>
+            <button mat-button id="boton">Ver mas</button>
           </mat-card-actions>
         </mat-card>
       </div>
