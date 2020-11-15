@@ -19,7 +19,7 @@
                 <p style="font-weight: bold;">Sesiones:</p>
                 <mat-selection-list *ngFor="let sesion of proyecto.sesiones">
                     <mat-list-item>
-                        <button id="button" mat-button>
+                        <button id="button" mat-button routerLink="/sesion/{{sesion.id}}">
                             <span style="font-weight: bold;">{{sesion.nombre}}:</span>&nbsp;{{sesion.descripcion}}
                         </button>
                         <button mat-button id="boton" routerLink="/sesion/{{sesion.id}}">Ver mas</button>

@@ -18,14 +18,25 @@
           <ng-template #elseBlock>
             <p>Femenino</p>
           </ng-template>
-        </mat-card-content>
-    </mat-card>
-    <div class="graph-container">
+          <div class="graph-container">
         <div style="display: block">
           <svg width="900" height="500"></svg>
 
         </div>
     </div>
+    <p style="font-weight: bold;">Experimentos:</p>
+                <mat-selection-list *ngFor="let exp of sesiones.experimentos">
+                    <mat-list-item>
+                        <button id="button" mat-button style="overflow: hidden; text-overflow: ellipsis;">
+                            <span style="font-weight: bold; overflow: hidden;">{{exp.nombre}}:</span>&nbsp;{{exp.descripcion}}
+                        </button>
+                        <button mat-button id="boton" routerLink="/sesion/{{exp.id}}">Ver mas</button>
+                    </mat-list-item>
+                  </mat-selection-list> 
+                  <br><br>
+        </mat-card-content>
+    </mat-card>
+    
 
 </div>
 <br><br>
