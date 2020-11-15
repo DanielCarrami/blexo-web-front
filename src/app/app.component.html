@@ -2,7 +2,7 @@
 <div style="overflow: visible;">
 <app-header *ngIf="showHeader"></app-header>
 <mat-drawer-container>
-    <mat-drawer mode="side" opened><app-sidenav></app-sidenav></mat-drawer>
+    <mat-drawer mode="side" opened *ngIf="showHeader"><app-sidenav></app-sidenav></mat-drawer>
     <mat-drawer-content><router-outlet></router-outlet></mat-drawer-content>
 </mat-drawer-container>
 </div>
