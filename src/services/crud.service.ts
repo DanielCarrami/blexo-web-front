@@ -44,6 +44,17 @@ export class CrudService {
     })
   }
 
+  get_proyectos(){
+    const token = this.auth.getToken()
+    let url = this.URL + 'proyecto_de_usuarios'  + '/';
+    return axios.get(url, {
+      headers:{
+        'Content-Type': 'application/x-www-form-urlencoded',
+        Authorization: 'Token ' + token
+      }
+    })
+  }
+
   post_one(model: Model, body){
     const token = this.auth.getToken()
     console.log("Aqui está el token papu ", token)

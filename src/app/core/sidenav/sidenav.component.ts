@@ -10,14 +10,17 @@ import { Router } from '@angular/router';
 export class SidenavComponent implements OnInit {
 
   constructor(
-    
     private router: Router
   ) { }
 
   ngOnInit(): void {
   }
 
-  navigate(destination: string){
-    this.router.navigate([destination]);
+  navigateProyecto(){
+    this.router.navigate(['/proyecto']);
+  }
+
+  navigateMiProyecto(){
+    this.router.navigate(['/mi-proyecto']);
   }
 }

@@ -43,6 +43,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { ResultadoComponent } from './resultado/resultado.component';
 import { SidenavComponent } from './core/sidenav/sidenav.component';
+import { MisProyectosComponent } from './proyecto/mis-proyectos/mis-proyectos.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +60,8 @@ import { SidenavComponent } from './core/sidenav/sidenav.component';
     HeaderComponent,
     EditarUsuarioComponent,
     ResultadoComponent,
-    SidenavComponent
+    SidenavComponent,
+    MisProyectosComponent
   ],
   imports: [
     BrowserModule,

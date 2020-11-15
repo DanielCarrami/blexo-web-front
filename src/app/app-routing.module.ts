@@ -7,7 +7,7 @@ import { InicioSesionComponent } from './login/inicio-sesion/inicio-sesion.compo
 import { RegistroComponent } from './login/registro/registro.component';
 
 import { ProjectViewComponent } from './proyecto/project-view/project-view.component';
-
+import { MisProyectosComponent } from './proyecto/mis-proyectos/mis-proyectos.component';
 
 const routes: Routes = [
   {path: '', component: InicioSesionComponent},
@@ -15,6 +15,7 @@ const routes: Routes = [
   {path: 'proyecto', component: ProjectViewComponent},
   {path: 'sesion', component: VerSesionComponent},
   {path: 'registro', component: RegistroComponent},
+  {path: 'mi-proyecto', component: MisProyectosComponent},
   {path: 'creacion', component: CrearSesionComponent},
 ];
 
