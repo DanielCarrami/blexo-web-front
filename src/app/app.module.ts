@@ -45,6 +45,7 @@ import { ResultadoComponent } from './resultado/resultado.component';
 import { SidenavComponent } from './core/sidenav/sidenav.component';
 import { MisProyectosComponent } from './proyecto/mis-proyectos/mis-proyectos.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { OneProjectComponent } from './proyecto/one-project/one-project.component';
 
 @NgModule({
   declarations: [
@@ -63,7 +64,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     ResultadoComponent,
     SidenavComponent,
     MisProyectosComponent,
-    DashboardComponent
+    DashboardComponent,
+    OneProjectComponent
   ],
   imports: [
     BrowserModule,
