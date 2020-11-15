@@ -7,13 +7,15 @@
 }
 
 .container{
-    background-color: #d4dccd;
-
+    
+    background-color: #00B4D8;
+    min-height: 1000px;
     padding: 30px;
 }
 .sesion{
-
-    border: 2px solid;
+    margin-left: 35px;
+    width: 1000px;
+    border-radius: 3px;
     background-color: white;
 }
   .sesion-grid{
@@ -37,6 +39,16 @@
     flex-shrink: 0;
 }
 
-.title{margin-left: 30px;}
+.title{
+    margin-left: 35px;
+    font-size: xx-large;
+    color: white;
+    font-weight: bold;
+}
 
-#boton{margin-left: 20px;}
+#boton{
+    margin-left: 35px;
+    background: #0077B6;
+    color: white;
+
+}

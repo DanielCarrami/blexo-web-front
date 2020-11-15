@@ -1,13 +1,23 @@
 <div class="container">
-  <button mat-raised-button (click)="popup()" class="button" style="float:center" color="accent">Editar sesion</button>
+  <h1 class="title">Detalles de sesión</h1>
+  <button mat-raised-button (click)="popup()" class="button" id="boton" >Editar sesion</button>
   <br><br>
 <div class="sesion">
   <br><br>
   
     <mat-card>
-      <mat-card-title>{{sesiones["nombre"]}}</mat-card-title><br>
-        <mat-card-content>
-          {{sesiones["descripcion"]}}
+      <mat-card-title>{{sesiones.nombre}}</mat-card-title><br>
+        <mat-card-content style="margin-left: 15px;">
+          <p style="font-weight: bold;">Descripcion:</p>
+          <p>{{sesiones.descripcion}}</p>
+          <p style="font-weight: bold;">Edad:</p>
+          <p>{{sesiones.edad}} años</p>
+          <p style="font-weight: bold;">Sexo:</p>
+          <div *ngIf="sesiones.sexo == 'M';else elseBlock"></div>
+          <p>Masculino</p>
+          <ng-template #elseBlock>
+            <p>Femenino</p>
+          </ng-template>
         </mat-card-content>
     </mat-card>
     <div class="graph-container">
@@ -16,15 +26,7 @@
 
         </div>
     </div>
-    <div class="sesion-grid">
-      <mat-card *ngFor="let exp of sesion.experimentos" class="sesion-card">
-        <mat-card-title>{{exp.title}}</mat-card-title>
-        <mat-card-content>
-          <p>{{exp.content}}</p>
-        </mat-card-content>
-        <button id="boton" type="button" mat-raised-button class="btn btn-outline-success" (click)="this.printResult()">Ver más</button>
-      </mat-card>
-    </div>
+
 </div>
 <br><br>
 </div>

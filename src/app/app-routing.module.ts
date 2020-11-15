@@ -14,7 +14,7 @@ const routes: Routes = [
   {path: '', component: InicioSesionComponent},
   {path: 'iniciosesion', component: InicioSesionComponent},
   {path: 'proyecto', component: ProjectViewComponent},
-  {path: 'sesion', component: VerSesionComponent},
+  {path: 'sesion/:id', component: VerSesionComponent},
   {path: 'registro', component: RegistroComponent},
   {path: 'mi-proyecto', component: MisProyectosComponent},
   {path: 'creacion', component: CrearSesionComponent},
