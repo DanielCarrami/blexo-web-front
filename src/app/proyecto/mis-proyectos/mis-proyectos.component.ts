@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CreateProjectComponent } from '../create-project/create-project.component';
 import { MatDialog } from '@angular/material/dialog';
-import { EditProjectComponent } from '../edit-project/edit-project.component';
 import { CrudService, Model } from '../../../services/crud.service';
 import { Router } from '@angular/router';
 import { CrearSesionComponent } from '../../sesion/crear-sesion/crear-sesion.component';
@@ -44,14 +43,6 @@ export class MisProyectosComponent implements OnInit {
     });
   }
 
-  editarProyecto(): void{
-    const dialogRef = this.dialog.open(EditProjectComponent, {
-      width: '450px'
-    });
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
-    });
-  }
 
   verSesion(): void{
     this.router.navigate(['/sesion']);

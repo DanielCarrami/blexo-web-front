@@ -72,14 +72,14 @@ export class CrudService {
     const token = this.auth.getToken()
     console.log("Aqui está el token papu ", token)
     console.log(body);
-    return this.http.put(this.URL + model + "/" + id + "/", body, {headers:{'Content-Type': 'application/json',
+    return axios.put(this.URL + model + "/" + id + "/", body, {headers:{'Content-Type': 'application/json',
     Authorization: 'Token ' + this.auth.getToken()}});
   }
 
   delete(model: string, id: any) {
     const token = this.auth.getToken()
     console.log("Aqui está el token papu ", token)
-    return this.http.delete(this.URL + model + "/" + id + "/", {
+    return axios.delete(this.URL + model + "/" + id + "/", {
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
         Authorization: 'Token ' + token

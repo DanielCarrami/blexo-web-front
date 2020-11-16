@@ -1,6 +1,8 @@
 import { Component, OnInit, Input  } from '@angular/core';
 import { Router } from '@angular/router';
 
+import { MatDialog } from '@angular/material/dialog';
+import { EditProjectComponent } from '../edit-project/edit-project.component';
 import { CrudService, Model } from '../../../services/crud.service';
 import { ActivatedRoute} from '@angular/router';
 
@@ -21,6 +23,7 @@ export class OneProjectComponent implements OnInit {
   };
 
   constructor(
+    private dialog: MatDialog,
     private router: Router,
     private crudService: CrudService,
     private route: ActivatedRoute
@@ -34,6 +37,19 @@ export class OneProjectComponent implements OnInit {
         this.proyecto=res.data
       }
     )
+  }
+
+  
+  editarProyecto(): void{
+    const dialogRef = this.dialog.open(EditProjectComponent, {
+      width: '450px',
+      data: {
+        id: this.id
+      }
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
   }
 
 }
