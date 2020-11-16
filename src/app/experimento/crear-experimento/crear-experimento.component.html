@@ -1,1 +1,28 @@
-<p>crear-experimento works!</p>
+
+<div mat-dialog-content>
+    <h1 mat-dialog-title>Crear nuevo experimento</h1>
+    
+    <br>
+      <form>
+      <p>Titulo del experimento</p>
+      <mat-form-field>
+        <mat-label>Nombre</mat-label>
+        <input matInput [(ngModel)]='experimento.nombre' name= "nombre" placeholder="Nombre">
+      </mat-form-field>
+    
+      <p> Informacion Relevante</p>
+      <mat-form-field class="example-full-width">
+        <mat-label >Informacion Relevante</mat-label>
+        <textarea style= "height: 100px" matInput [(ngModel)]='experimento.descripcion' name="descripcion" placeholder="Ej. Características particulares..."></textarea>
+      </mat-form-field>
+    
+      <p>Duracion</p>
+      <mat-form-field>
+        <mat-label>Duracion</mat-label>
+        <input matInput [(ngModel)]="experimento.duracion" name="Duracion" placeholder="0:00">
+      </mat-form-field>
+    
+    </form>
+    <button mat-raised-button color="warn" mat-dialog-close>Cancelar</button>
+    <button mat-raised-button id="button" (click)="crearExperimento()" mat-dialog-close>Crear Experimento</button>
+</div>
