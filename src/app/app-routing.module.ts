@@ -9,6 +9,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProjectViewComponent } from './proyecto/project-view/project-view.component';
 import { MisProyectosComponent } from './proyecto/mis-proyectos/mis-proyectos.component';
 import { OneProjectComponent } from './proyecto/one-project/one-project.component';
+import { VerExperimentoComponent } from './experimento/ver-experimento/ver-experimento.component';
 
 const routes: Routes = [
   {path: '', component: InicioSesionComponent},
@@ -19,7 +20,8 @@ const routes: Routes = [
   {path: 'mi-proyecto', component: MisProyectosComponent},
   {path: 'creacion', component: CrearSesionComponent},
   {path: 'dashboard', component: DashboardComponent},
-  {path: 'proyecto/:id', component: OneProjectComponent}
+  {path: 'proyecto/:id', component: OneProjectComponent},
+  {path: 'experimento/:id', component: VerExperimentoComponent}
 ];
 
 @NgModule({
