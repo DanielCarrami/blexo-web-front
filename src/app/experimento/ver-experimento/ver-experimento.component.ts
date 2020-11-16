@@ -24,9 +24,9 @@ export class VerExperimentoComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    this.crudService.get_one(Model.EXPERIMENTOS, this.id)
+    /*this.crudService.get_one(Model.EXPERIMENTOS, this.id)
     .then(res => this.experimento = res.data)
-    .catch(err => console.error(err))
+    .catch(err => console.error(err))*/
   }
 
 }
