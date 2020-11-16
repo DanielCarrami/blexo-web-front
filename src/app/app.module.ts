@@ -49,6 +49,7 @@ import { OneProjectComponent } from './proyecto/one-project/one-project.componen
 import { VerExperimentoComponent } from './experimento/ver-experimento/ver-experimento.component';
 import { CrearExperimentoComponent } from './experimento/crear-experimento/crear-experimento.component';
 import { EditarExperimentoComponent } from './experimento/editar-experimento/editar-experimento.component';
+import { LinearGraphComponent } from './core/graficos/linear-graph/linear-graph.component';
 
 @NgModule({
   declarations: [
@@ -71,7 +72,8 @@ import { EditarExperimentoComponent } from './experimento/editar-experimento/edi
     OneProjectComponent,
     VerExperimentoComponent,
     CrearExperimentoComponent,
-    EditarExperimentoComponent
+    EditarExperimentoComponent,
+    LinearGraphComponent
   ],
   imports: [
     BrowserModule,

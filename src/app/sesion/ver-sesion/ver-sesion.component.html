@@ -20,12 +20,7 @@
             <p>Femenino</p>
           </ng-template>
           <p style="font-weight: bold;">Estadísticas:</p>
-          <div class="graph-container">
-        <div style="display: block">
-          <svg width="900" height="500"></svg>
-
-        </div>
-          </div>
+          <app-linear-graph></app-linear-graph>
     <p style="font-weight: bold;">Experimentos:</p>
       <mat-selection-list *ngFor="let exp of sesiones.experimentos">
         <mat-list-item>
