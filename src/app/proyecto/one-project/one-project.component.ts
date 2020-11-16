@@ -1,10 +1,11 @@
 import { Component, OnInit, Input  } from '@angular/core';
 import { Router } from '@angular/router';
-
+import { ActivatedRoute} from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { EditProjectComponent } from '../edit-project/edit-project.component';
 import { CrudService, Model } from '../../../services/crud.service';
-import { ActivatedRoute} from '@angular/router';
+import { CrearSesionComponent } from '../../sesion/crear-sesion/crear-sesion.component';
+
 
 @Component({
   selector: 'app-one-project',
@@ -38,13 +39,24 @@ export class OneProjectComponent implements OnInit {
       }
     )
   }
-
   
   editarProyecto(): void{
     const dialogRef = this.dialog.open(EditProjectComponent, {
       width: '450px',
       data: {
         id: this.id
+      }
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+
+  crearSesion(): void{
+    const dialogRef = this.dialog.open(CrearSesionComponent, {
+      width: '450px',
+      data: {
+        project_id: this.id
       }
     });
     dialogRef.afterClosed().subscribe(result => {

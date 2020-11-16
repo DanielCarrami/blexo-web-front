@@ -1,7 +1,8 @@
+
+<div mat-dialog-content>
 <h1 mat-dialog-title>Crear Nueva Sesion</h1>
 
 <br>
-<div mat-dialog-content>
   <form (submit) = crearsesion()>
 
   
@@ -14,7 +15,7 @@
   <p> Informacion Relevante</p>
   <mat-form-field class="example-full-width">
     <mat-label >Informacion Relevante</mat-label>
-    <textarea style= "width: 260px" matInput [(ngModel)]='sesionnueva.descripcion' name="descripcion" placeholder="Ex. It makes me feel..."></textarea>
+    <textarea style= "height: 100px" matInput [(ngModel)]='sesionnueva.descripcion' name="descripcion" placeholder="Ej. Características particulares..."></textarea>
   </mat-form-field>
 
   <p>Edad</p>
@@ -26,14 +27,13 @@
   <h4>Sexo</h4>
   <mat-form-field appearance="fill">
   <mat-label>Sexo</mat-label>
-  <select matNativeControl required [(ngModel)]="sesionnueva.sexo" name ="sexo">
-    <option  value="M">Hombre</option>
-    <option  value="F">Mujer</option>
-  </select>
+  <mat-select required [(ngModel)]="sesionnueva.sexo" name ="sexo">
+    <mat-option  value="M">Hombre</mat-option>
+    <mat-option  value="F">Mujer</mat-option>
+    <mat-option  value="O">Otro</mat-option>
+  </mat-select>
   </mat-form-field>
-
-
-  <button mat-button style="margin:5%" type="submit">Crear Sesion</button>
-
 </form>
+<button mat-raised-button color="warn" mat-dialog-close>Cancelar</button>
+<button mat-raised-button id="button" (click)="crearsesion()" mat-dialog-close>Crear Sesion</button>
 </div>

@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { CrudService, Model } from '../../../services/crud.service';
 import {Sesion} from '../../../models/sesion';
+
+import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 @Component({
   selector: 'app-crear-sesion',
   templateUrl: './crear-sesion.component.html',
@@ -12,20 +14,22 @@ export class CrearSesionComponent implements OnInit {
   sesionnueva = {
     nombre: '',
     descripcion: '',
-    edad: 20,
+    edad: 0,
     sexo: "",
     proyecto: 1
   }
-  private sesion:Sesion;
-  constructor(private crudService: CrudService) { }
-
-  ngOnInit(): void {
-    this.sesion = new Sesion("Alarico Mercado","Esto es prueba",20,"M",1)
+  constructor(
+    private crudService: CrudService,
+    @Inject(MAT_DIALOG_DATA) public data: any
+  ) { 
+    this.sesionnueva.proyecto = data.project_id;
+    console.log(data.project_id)
   }
 
+  ngOnInit(): void {}
+
   crearsesion(){
-    console.log(this.sesionnueva);
-    console.log(this.sesion)
+    this.crudService.post_one(Model.SESION,this.sesionnueva)
 
   }
 

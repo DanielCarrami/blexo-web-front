@@ -26,7 +26,7 @@ import { CommonModule} from '@angular/common';
 import { MatDialog, MatDialogModule} from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
-
+import {MatSelectModule} from '@angular/material/select';
 import { CrearSesionComponent } from './sesion/crear-sesion/crear-sesion.component';
 import { InicioSesionComponent } from './login/inicio-sesion/inicio-sesion.component';
 import { RegistroComponent } from './login/registro/registro.component';
@@ -46,6 +46,9 @@ import { SidenavComponent } from './core/sidenav/sidenav.component';
 import { MisProyectosComponent } from './proyecto/mis-proyectos/mis-proyectos.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { OneProjectComponent } from './proyecto/one-project/one-project.component';
+import { VerExperimentoComponent } from './experimento/ver-experimento/ver-experimento.component';
+import { CrearExperimentoComponent } from './experimento/crear-experimento/crear-experimento.component';
+import { EditarExperimentoComponent } from './experimento/editar-experimento/editar-experimento.component';
 
 @NgModule({
   declarations: [
@@ -65,7 +68,10 @@ import { OneProjectComponent } from './proyecto/one-project/one-project.componen
     SidenavComponent,
     MisProyectosComponent,
     DashboardComponent,
-    OneProjectComponent
+    OneProjectComponent,
+    VerExperimentoComponent,
+    CrearExperimentoComponent,
+    EditarExperimentoComponent
   ],
   imports: [
     BrowserModule,
@@ -96,7 +102,8 @@ import { OneProjectComponent } from './proyecto/one-project/one-project.componen
     MatDatepickerModule,
     MatNativeDateModule,
     FlexLayoutModule,
-    MatListModule
+    MatListModule,
+    MatSelectModule
   ],
   entryComponents:[EditarSesionComponent, VerSesionComponent, CrearSesionComponent, EditarUsuarioComponent],
   providers: [
