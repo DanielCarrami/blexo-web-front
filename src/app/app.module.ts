@@ -4,6 +4,11 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+import {APOLLO_OPTIONS} from 'apollo-angular';
+import {HttpLink} from 'apollo-angular/http';
+import {InMemoryCache} from '@apollo/client/core';
+
+import { GraphQLModule } from './graphql.module';
 import { ProjectViewComponent } from './proyecto/project-view/project-view.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTableModule } from '@angular/material/table';
@@ -109,7 +114,19 @@ import { LinearGraphComponent } from './core/graficos/linear-graph/linear-graph.
   ],
   entryComponents:[EditarSesionComponent, VerSesionComponent, CrearSesionComponent, EditarUsuarioComponent],
   providers: [
-    MatDialogModule
+    MatDialogModule,
+    {
+      provide: APOLLO_OPTIONS,
+      useFactory: (httpLink: HttpLink) =>{
+        return {
+          cache: new InMemoryCache(),
+          link: httpLink.create({
+            uri: 'http://localhost:8000/graphql/'
+          }),
+        };
+      },
+      deps: [HttpLink]
+    }
   ],
   bootstrap: [AppComponent]
 })

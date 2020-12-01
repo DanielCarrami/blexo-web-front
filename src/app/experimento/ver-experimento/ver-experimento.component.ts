@@ -1,15 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-
-import { CrudService, Model } from '../../../services/crud.service';
-
+import {Apollo, gql} from 'apollo-angular';
 import { ActivatedRoute} from '@angular/router';
+import {ResultadoComponent} from '../../resultado/resultado.component';
+import {MatDialog,MatDialogConfig} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-ver-experimento',
   templateUrl: './ver-experimento.component.html',
   styleUrls: ['./ver-experimento.component.scss']
 })
+
 export class VerExperimentoComponent implements OnInit {
+
   id
   experimento = {
     nombre: "",
@@ -17,16 +19,38 @@ export class VerExperimentoComponent implements OnInit {
     duracion: 0
   }
   constructor(
-    private crudService: CrudService,
-    private route: ActivatedRoute
+    private apollo: Apollo,
+    private route: ActivatedRoute,
+    public dialog: MatDialog
   ) {
     this.id = route.snapshot.paramMap.get('id')
    }
 
   ngOnInit(): void {
-    /*this.crudService.get_one(Model.EXPERIMENTOS, this.id)
-    .then(res => this.experimento = res.data)
-    .catch(err => console.error(err))*/
+    this.apollo.watchQuery({
+      query: gql`
+      {
+        experimentoById(id: "3")
+        {
+          id
+          nombre
+          descripcion
+          duracion
+        }
+      }
+      `
+    })
+    .valueChanges.subscribe((result:any) => {
+    
+      this.experimento.nombre = result.data.experimentoById.nombre;
+      this.experimento.descripcion = result.data.experimentoById.descripcion;
+      this.experimento.duracion = result.data.experimentoById.duracion;
+    })
   }
 
+  printResult(){
+    this.dialog.open(ResultadoComponent,{
+      width: '475 px'
+    })
+  }
 }
