@@ -121,7 +121,7 @@ import { LinearGraphComponent } from './core/graficos/linear-graph/linear-graph.
         return {
           cache: new InMemoryCache(),
           link: httpLink.create({
-            uri: 'http://localhost:8000/graphql/'
+            uri: 'http://104.198.147.3:8000/graphql/'
           }),
         };
       },

@@ -17,7 +17,7 @@ export class CrudService {
   headers: HttpHeaders;
 
   constructor(private auth: AuthService, private http: HttpClient) {
-    this.URL = 'http://localhost:8000/api/';
+    this.URL = 'http://104.198.147.3:8000/api/';
   }
 
   get_all(model: Model) {
@@ -27,6 +27,7 @@ export class CrudService {
     return axios.get(url,{
       headers:{
         'Content-Type': 'application/x-www-form-urlencoded',
+        //Authorization: 'Token ee4bf3c2503311901063b9f001a35af067cecc6b'
         Authorization: 'Token ' + token
       }
     });

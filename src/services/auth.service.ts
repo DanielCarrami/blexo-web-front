@@ -10,10 +10,10 @@ export class AuthService {
   headers: HttpHeaders;
 
   constructor(private http: HttpClient) {
-    this.URL = 'http://localhost:8000/auth/';
+    this.URL = 'http://104.198.147.3:8000/auth/';
     this.headers = new HttpHeaders({
       'Content-Type': 'application/x-www-form-urlencoded',
-      Authorization: 'Token f86f879e56e96c62831ba240859c5a7a0f0bac5a'
+      Authorization: 'Token ee4bf3c2503311901063b9f001a35af067cecc6b'
     });
     /*
     console.log(this.headers);
