@@ -39,6 +39,11 @@ export class HeaderComponent implements OnInit {
   } 
 
   ngOnInit(): void {
+    this.auth.getUser().then(
+      res =>{
+        this.user_name = res.data.first_name
+      }
+    ).catch(err => console.error(err))
   }
 
   logout(){

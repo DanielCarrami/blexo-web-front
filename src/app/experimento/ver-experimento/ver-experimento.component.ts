@@ -4,11 +4,25 @@ import { ActivatedRoute} from '@angular/router';
 import {ResultadoComponent} from '../../resultado/resultado.component';
 import {MatDialog,MatDialogConfig} from '@angular/material/dialog';
 
+const GetExperimento = gql`
+  query GetExperimento($id: String!){
+    experimentoById(id: $id)
+    {
+      id
+      nombre
+      descripcion
+      duracion
+    }
+  }
+`;
+
 @Component({
   selector: 'app-ver-experimento',
   templateUrl: './ver-experimento.component.html',
   styleUrls: ['./ver-experimento.component.scss']
 })
+
+
 
 export class VerExperimentoComponent implements OnInit {
 
@@ -28,17 +42,10 @@ export class VerExperimentoComponent implements OnInit {
 
   ngOnInit(): void {
     this.apollo.watchQuery({
-      query: gql`
-      {
-        experimentoById(id: "3")
-        {
-          id
-          nombre
-          descripcion
-          duracion
-        }
+      query: GetExperimento,
+      variables: {
+        id: this.id
       }
-      `
     })
     .valueChanges.subscribe((result:any) => {
     

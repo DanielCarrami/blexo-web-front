@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import axios from 'axios';
+import { url } from 'inspector';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,8 @@ export class AuthService {
   headers: HttpHeaders;
 
   constructor(private http: HttpClient) {
-    this.URL = 'http://104.198.147.3:8000/auth/';
+    this.URL = 'http://localhost:8000/auth/';
+    //this.URL = 'http://104.198.147.3:8000/auth/';
     this.headers = new HttpHeaders({
       'Content-Type': 'application/x-www-form-urlencoded',
       Authorization: 'Token ee4bf3c2503311901063b9f001a35af067cecc6b'
@@ -78,6 +80,19 @@ export class AuthService {
     if(!token) return false;
     if(token == "") return false;
     return true;
+  }
+
+  //Recibir información de usuario
+  getUser(){
+    let token = localStorage.getItem('token');
+    return axios.get(
+      this.URL + 'users/me/', {
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+          Authorization: 'Token ' + token
+        }
+      }
+    )
   }
 
   getToken() {
