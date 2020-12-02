@@ -1,0 +1,39 @@
+
+<div mat-dialog-content>
+<h1 mat-dialog-title>Crear Nueva Sesion</h1>
+
+<br>
+  <form (submit) = crearsesion()>
+
+  
+  <p>Nombre de Sesion/Sujeto</p>
+  <mat-form-field>
+    <mat-label>Nombre</mat-label>
+    <input matInput [(ngModel)]='sesionnueva.nombre' name= "nombre" placeholder="Nombre">
+  </mat-form-field>
+
+  <p> Informacion Relevante</p>
+  <mat-form-field class="example-full-width">
+    <mat-label >Informacion Relevante</mat-label>
+    <textarea style= "height: 100px" matInput [(ngModel)]='sesionnueva.descripcion' name="descripcion" placeholder="Ej. Características particulares..."></textarea>
+  </mat-form-field>
+
+  <p>Edad</p>
+  <mat-form-field>
+    <mat-label>Edad</mat-label>
+    <input matInput [(ngModel)]="sesionnueva.edad" name="edad" placeholder="Nombre">
+  </mat-form-field>
+
+  <h4>Sexo</h4>
+  <mat-form-field appearance="fill">
+  <mat-label>Sexo</mat-label>
+  <mat-select required [(ngModel)]="sesionnueva.sexo" name ="sexo">
+    <mat-option  value="M">Hombre</mat-option>
+    <mat-option  value="F">Mujer</mat-option>
+    <mat-option  value="O">Otro</mat-option>
+  </mat-select>
+  </mat-form-field>
+</form>
+<button mat-raised-button color="warn" mat-dialog-close>Cancelar</button>
+<button mat-raised-button id="button" (click)="crearsesion()" mat-dialog-close>Crear Sesion</button>
+</div>

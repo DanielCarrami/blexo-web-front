@@ -1,0 +1,23 @@
+<div class="container">
+    <h1 class="title">Detalles de experimento</h1>
+    <button mat-raised-button class="button" id="boton" >Editar experimento</button>
+    <br><br>
+  <div class="exp">
+    <br><br>
+      <mat-card>
+        <mat-card-title>{{experimento.nombre}}</mat-card-title><br>
+          <mat-card-content style="margin-left: 15px;">
+            <p style="font-weight: bold;">Descripcion:</p>
+            <p>{{experimento.descripcion}}</p>
+            <p style="font-weight: bold;">Duracion:</p>
+            <p>{{experimento.duracion}} horas</p>
+            <p style="font-weight: bold;">Estadísticas:</p>
+            <app-linear-graph></app-linear-graph>
+            <p style="font-weight: bold;">Resultados:</p> 
+            <button mat-raised-button class="button" id="boton" (click)="printResult()">Ver resultado</button>
+            <button mat-raised-button class="button" id="boton" >Comparar prediccion</button>
+        </mat-card-content>
+      </mat-card>
+  </div>
+  <br><br>
+  </div>

@@ -1,0 +1,44 @@
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  min-height: 1000px;
+  background-color: #00B4D8;
+}
+
+.top-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon{
+  margin-bottom: 20px;
+}
+
+.card{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.password-container{
+  margin-bottom: 30px;
+}
+
+#email-field{
+  width: 300px;
+}
+
+#password-field{
+  width: 300px;
+}
+
+a{
+  margin-top: 20px;
+}

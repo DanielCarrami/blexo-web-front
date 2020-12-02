@@ -1,0 +1,16 @@
+<form (submit) = editarProyecto()>
+  <h1>Nuevo Proyecto</h1>
+
+  <mat-form-field style="width: 100% !important;">
+    <mat-label>Name</mat-label>
+    <input matInput [(ngModel)]='proyecto.nombre' name= "nombre" placeholder="Nombre">
+  </mat-form-field>
+
+  <mat-form-field style="width: 100% !important;">
+    <mat-label>Description</mat-label>
+    <textarea matInput [(ngModel)]='proyecto.descripcion' name="descripcion" placeholder="Descripcion"></textarea>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" type="submit" mat-dialog-close>Guardar</button>
+  <button mat-raised-button color="danger" (click)="borrar()" mat-dialog-close>Eliminar Proyecto</button>
+</form>
