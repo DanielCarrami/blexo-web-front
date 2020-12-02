@@ -17,56 +17,74 @@ export class CrudService {
   headers: HttpHeaders;
 
   constructor(private auth: AuthService, private http: HttpClient) {
-    this.URL = 'http://34.72.72.137:8000/api/';
-    this.headers = new HttpHeaders({
-      'Content-Type': 'application/x-www-form-urlencoded',
-      Authorization: 'Token f86f879e56e96c62831ba240859c5a7a0f0bac5a'
-    });
-    /*
-    if(this.auth.isLoggedIn()){
-      this.headers = new HttpHeaders({
-        'Content-Type': 'application/x-www-form-urlencoded',
-        Authorization: 'Token ' + this.auth.getToken()
-      });
-    }else{
-      this.headers = new HttpHeaders({
-        'Content-Type': 'application/x-www-form-urlencoded'
-      });
-    }
-    */
-
+    this.URL = 'http://104.198.147.3:8000/api/';
   }
 
   get_all(model: Model) {
+    const token = this.auth.getToken()
+    console.log("Aqui está el token papu ", token)
     let url = this.URL + model + '/';
-    console.log(this.headers);
-    return axios.get(url,{headers:{'Content-Type': 'application/x-www-form-urlencoded',
-    Authorization: 'Token f86f879e56e96c62831ba240859c5a7a0f0bac5a'}});
+    return axios.get(url,{
+      headers:{
+        'Content-Type': 'application/x-www-form-urlencoded',
+        //Authorization: 'Token ee4bf3c2503311901063b9f001a35af067cecc6b'
+        Authorization: 'Token ' + token
+      }
+    });
   }
 
   get_one(model: Model, id: number, params?){
+    const token = this.auth.getToken()
+    console.log("Aqui está el token papu ", token)
     let url = this.URL + model + '/' + id + '/';
-    return axios.get(url, {headers:{'Content-Type': 'application/x-www-form-urlencoded',
-    Authorization: 'Token f86f879e56e96c62831ba240859c5a7a0f0bac5a'}})
+    return axios.get(url, {
+      headers:{
+        'Content-Type': 'application/x-www-form-urlencoded',
+        Authorization: 'Token ' + token
+      }
+    })
+  }
+
+  get_proyectos(){
+    const token = this.auth.getToken()
+    let url = this.URL + 'proyecto_de_usuarios'  + '/';
+    return axios.get(url, {
+      headers:{
+        'Content-Type': 'application/x-www-form-urlencoded',
+        Authorization: 'Token ' + token
+      }
+    })
   }
 
   post_one(model: Model, body){
+    const token = this.auth.getToken()
+    console.log("Aqui está el token papu ", token)
     let url = this.URL + model + '/';
     console.log(body);
-    return axios.post(url,body,{headers:{'Content-Type': 'application/json',
-    Authorization: 'Token f86f879e56e96c62831ba240859c5a7a0f0bac5a'}});
+    return axios.post(url,body,{
+      headers:{
+        'Content-Type': 'application/json',
+        Authorization: 'Token '+ token
+      }
+    });
   }
 
   update(model: string, id: any, body: any) {
+    const token = this.auth.getToken()
+    console.log("Aqui está el token papu ", token)
     console.log(body);
-    return this.http.put(this.URL + model + "/" + id + "/", body, {headers:{'Content-Type': 'application/json',
-    Authorization: 'Token f86f879e56e96c62831ba240859c5a7a0f0bac5a'}});
+    return axios.put(this.URL + model + "/" + id + "/", body, {headers:{'Content-Type': 'application/json',
+    Authorization: 'Token ' + this.auth.getToken()}});
   }
 
   delete(model: string, id: any) {
-    return this.http.delete(this.URL + model + "/" + id + "/", {
-      headers: {'Content-Type': 'application/x-www-form-urlencoded',
-      Authorization: 'Token f86f879e56e96c62831ba240859c5a7a0f0bac5a'}
+    const token = this.auth.getToken()
+    console.log("Aqui está el token papu ", token)
+    return axios.delete(this.URL + model + "/" + id + "/", {
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+        Authorization: 'Token ' + token
+    }
     });
   }
 }
