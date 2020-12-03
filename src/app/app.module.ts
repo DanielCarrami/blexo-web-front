@@ -37,7 +37,7 @@ import { InicioSesionComponent } from './login/inicio-sesion/inicio-sesion.compo
 import { RegistroComponent } from './login/registro/registro.component';
 import { HeaderComponent } from './core/header/header.component';
 
-import { MatMenuModule } from '@angular/material/menu';
+import { MatMenu, MatMenuModule } from '@angular/material/menu';
 import { EditarUsuarioComponent } from './login/editar-usuario/editar-usuario.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ScrollingModule } from '@angular/cdk/scrolling';
@@ -55,6 +55,7 @@ import { VerExperimentoComponent } from './experimento/ver-experimento/ver-exper
 import { CrearExperimentoComponent } from './experimento/crear-experimento/crear-experimento.component';
 import { EditarExperimentoComponent } from './experimento/editar-experimento/editar-experimento.component';
 import { LinearGraphComponent } from './core/graficos/linear-graph/linear-graph.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -87,6 +88,18 @@ import { LinearGraphComponent } from './core/graficos/linear-graph/linear-graph.
     BrowserAnimationsModule,
     MatTableModule,
     MatCardModule,
+    RouterModule.forRoot([
+      {path: '', component: InicioSesionComponent},
+      {path: 'iniciosesion', component: InicioSesionComponent},
+      {path: 'proyecto', component: ProjectViewComponent},
+      {path: 'sesion/:id', component: VerSesionComponent},
+      {path: 'registro', component: RegistroComponent},
+      {path: 'mi-proyecto', component: MisProyectosComponent},
+      {path: 'creacion', component: CrearSesionComponent},
+      {path: 'dashboard', component: DashboardComponent},
+      {path: 'proyecto/:id', component: OneProjectComponent},
+      {path: 'experimento/:id', component: VerExperimentoComponent}
+    ], {enableTracing: true}),
     MatGridListModule,
     MatDividerModule,
     MatDialogModule,
@@ -100,6 +113,7 @@ import { LinearGraphComponent } from './core/graficos/linear-graph/linear-graph.
     MatIconModule,
     MatMenuModule,
     MatTabsModule,
+    MatMenuModule,
     MatSidenavModule,
     ReactiveFormsModule,
     ScrollingModule,
