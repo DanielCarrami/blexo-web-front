@@ -16,8 +16,11 @@ export class CrudService {
   URL: string;
   headers: HttpHeaders;
 
-  constructor(private auth: AuthService, private http: HttpClient) {
-    this.URL = 'http://104.198.147.3:8000/api/';
+  constructor(
+    private auth: AuthService, 
+    private http: HttpClient) {
+    this.URL = 'http://localhost:8000/api/';
+    //this.URL = 'http://104.198.147.3:8000/api/';
   }
 
   get_all(model: Model) {
