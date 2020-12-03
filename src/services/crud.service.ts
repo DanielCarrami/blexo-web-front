@@ -19,7 +19,7 @@ export class CrudService {
   constructor(
     private auth: AuthService, 
     private http: HttpClient) {
-    this.URL = 'http://localhost:8000/api/';
+    this.URL = 'http://34.70.147.241:8000/api/';
     //this.URL = 'http://104.198.147.3:8000/api/';
   }
 

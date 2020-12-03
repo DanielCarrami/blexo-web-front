@@ -11,7 +11,7 @@ export class AuthService {
   headers: HttpHeaders;
 
   constructor(private http: HttpClient) {
-    this.URL = 'http://localhost:8000/auth/';
+    this.URL = 'http://34.70.147.241:8000/auth/';
     //this.URL = 'http://104.198.147.3:8000/auth/';
     this.headers = new HttpHeaders({
       'Content-Type': 'application/x-www-form-urlencoded',
