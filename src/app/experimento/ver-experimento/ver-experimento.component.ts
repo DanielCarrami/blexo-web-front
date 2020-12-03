@@ -1,14 +1,29 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import {Apollo, gql} from 'apollo-angular';
 import { ActivatedRoute} from '@angular/router';
 import {ResultadoComponent} from '../../resultado/resultado.component';
 import {MatDialog,MatDialogConfig} from '@angular/material/dialog';
+import { Subscription } from 'rxjs';
+
+const GetExperimento = gql`
+  query GetExperimento($id: String!){
+    experimentoById(id: $id)
+    {
+      id
+      nombre
+      descripcion
+      duracion
+    }
+  }
+`;
 
 @Component({
   selector: 'app-ver-experimento',
   templateUrl: './ver-experimento.component.html',
   styleUrls: ['./ver-experimento.component.scss']
 })
+
+
 
 export class VerExperimentoComponent implements OnInit {
 
@@ -18,6 +33,7 @@ export class VerExperimentoComponent implements OnInit {
     descripcion: "",
     duracion: 0
   }
+  private querySubscription: Subscription;
   constructor(
     private apollo: Apollo,
     private route: ActivatedRoute,
@@ -27,18 +43,11 @@ export class VerExperimentoComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    this.apollo.watchQuery({
-      query: gql`
-      {
-        experimentoById(id: "3")
-        {
-          id
-          nombre
-          descripcion
-          duracion
-        }
+    this.querySubscription = this.apollo.watchQuery({
+      query: GetExperimento,
+      variables: {
+        id: this.id
       }
-      `
     })
     .valueChanges.subscribe((result:any) => {
     
@@ -52,5 +61,8 @@ export class VerExperimentoComponent implements OnInit {
     this.dialog.open(ResultadoComponent,{
       width: '475 px'
     })
+  }
+  ngOnDestroy() {
+    this.querySubscription.unsubscribe();
   }
 }

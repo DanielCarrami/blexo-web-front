@@ -72,7 +72,7 @@ export class RegistroComponent implements OnInit {
             console.log("EEEEERRRROOOOOOOOOOOOOOORR")
           }
         }
-      );
+      ).catch(err => console.error(err));
   }
 
 

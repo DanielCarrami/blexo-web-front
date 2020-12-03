@@ -41,8 +41,10 @@ export class ProjectViewComponent implements OnInit {
     const dialogRef = this.dialog.open(CreateProjectComponent, {
       width: '450px'
     });
+
+
     dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
+      console.log(`Dialog result : ${result}`);
     });
   }
 
