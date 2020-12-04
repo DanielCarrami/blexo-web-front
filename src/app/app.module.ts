@@ -135,7 +135,7 @@ import { RouterModule } from '@angular/router';
         return {
           cache: new InMemoryCache(),
           link: httpLink.create({
-            uri: 'http://localhost:8000/graphql/'
+            uri: 'http://34.70.147.241:8000/graphql/'
           }),
         };
       },
