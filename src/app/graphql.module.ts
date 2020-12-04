@@ -6,7 +6,7 @@ import {HttpLink} from 'apollo-angular/http';
 export function createApollo(httpLink: HttpLink): ApolloClientOptions<any> {
   return{
     link: httpLink.create({
-      uri: 'http://localhost:8000/auth/',
+      uri: 'http://34.70.147.241:8000/auth/',
     //uri: 'http://104.198.147.3:8000/graphql/',
     }),
     cache: new InMemoryCache(),
