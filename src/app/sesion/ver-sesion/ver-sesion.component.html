@@ -1,0 +1,41 @@
+<div class="container">
+  <h1 class="title">Detalles de sesión</h1>
+  <button mat-raised-button (click)="popup()" class="button" id="boton" >Editar sesion</button>
+  <br><br>
+<div class="sesion">
+  <br><br>
+  
+    <mat-card>
+      <mat-card-title>{{sesiones.nombre}}</mat-card-title><br>
+        <mat-card-content style="margin-left: 15px;">
+          <p style="font-weight: bold;">Descripcion:</p>
+          <p>{{sesiones.descripcion}}</p>
+          <p style="font-weight: bold;">Edad:</p>
+          <p>{{sesiones.edad}} años</p>
+          <p style="font-weight: bold;">Sexo:</p>
+          <div *ngIf="sesiones.sexo == 'M';else elseBlock">
+            <p>Masculino</p>
+          </div>
+          <ng-template #elseBlock>
+            <p>Femenino</p>
+          </ng-template>
+          <p style="font-weight: bold;">Estadísticas:</p>
+          <app-linear-graph></app-linear-graph>
+    <p style="font-weight: bold;">Experimentos:</p>
+      <mat-selection-list *ngFor="let exp of sesiones.experimentos">
+        <mat-list-item>
+          <button id="button" mat-button style="overflow: hidden; text-overflow: ellipsis;">
+            <span style="font-weight: bold; overflow: hidden;">{{exp.nombre}}:</span>&nbsp;{{exp.descripcion}}
+          </button>
+          <button mat-button id="boton" routerLink="/experimento/{{exp.id}}">Ver mas</button>
+        </mat-list-item>
+      </mat-selection-list> 
+        <br><br>
+        <button mat-button id="boton1" (click)="crearExperimento()">Crear un nuevo experimento</button>
+      </mat-card-content>
+    </mat-card>
+    
+
+</div>
+<br><br>
+</div>

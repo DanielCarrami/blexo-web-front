@@ -1,6 +1,4 @@
-.icon {
-    padding: 4px 19px;
-  }
+
   .spacer {
     flex: 1 1 auto;
     align-content: center;
@@ -11,4 +9,8 @@
     justify-content: flex-start;
     align-content: center;
     padding-top: 10px;
+}
+.mat-toolbar {
+  background: #03045E;
+  color: #fff;
 }

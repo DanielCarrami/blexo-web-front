@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
-import { EditarUsuarioComponent } from 'src/app/editar-usuario/editar-usuario.component';
+import { EditarUsuarioComponent } from '../../login/editar-usuario/editar-usuario.component';
+
+import { AuthService } from '../../../services/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -16,7 +18,7 @@ export class HeaderComponent implements OnInit {
   telefono = "222-354-9089"
   password="postgresql"
 
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog, private auth: AuthService) { }
 
   openDialog() {
     
@@ -37,7 +39,15 @@ export class HeaderComponent implements OnInit {
   } 
 
   ngOnInit(): void {
+    this.auth.getUser().then(
+      res =>{
+        this.user_name = res.data.first_name
+      }
+    ).catch(err => console.error(err))
   }
 
+  logout(){
+    this.auth.logout();
+  }
 }
 
