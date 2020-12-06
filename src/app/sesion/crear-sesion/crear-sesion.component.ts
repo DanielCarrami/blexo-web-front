@@ -28,8 +28,7 @@ export class CrearSesionComponent implements OnInit {
   ngOnInit(): void {}
 
   crearsesion(){
-    this.crudService.post_one(Model.SESION,this.sesionnueva)
-
+      this.crudService.post_one(Model.SESION,this.sesionnueva);
   }
 
 }

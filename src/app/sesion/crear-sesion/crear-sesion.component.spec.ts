@@ -35,4 +35,25 @@ describe('CrearSesionComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('Should create sesion', () => {
+    fixture.detectChanges();
+    spyOn(component, "crearsesion");
+    let el = fixture.debugElement.nativeElement.querySelector('#button');
+    el.click();
+    expect(component.crearsesion).toHaveBeenCalled();
+  });
+
+  it('Should fill form', () => {
+    fixture.detectChanges();
+    spyOn(component, "crearsesion");
+    let el = fixture.debugElement.nativeElement.querySelector('#button');
+    component.sesionnueva["nombre"] = "pedrito";
+    component.sesionnueva["edad"] = 22;
+    component.sesionnueva["descripcion"] = "prueba";
+    component.sesionnueva["sexo"] = "M";
+    el.click();
+    expect(component.crearsesion).toHaveBeenCalled();
+  });
+
 });
