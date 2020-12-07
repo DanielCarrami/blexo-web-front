@@ -28,8 +28,21 @@ export class CrearSesionComponent implements OnInit {
   ngOnInit(): void {}
 
   crearsesion(){
-    this.crudService.post_one(Model.SESION,this.sesionnueva)
+      if (this.sesionnueva.nombre != ''){
+        this.pruebascorrecto();
+        this.crudService.post_one(Model.SESION,this.sesionnueva);
+      }
+      else{
+        this.pruebasincorrecto();
+      }
+      
+  }
 
+  pruebascorrecto(){
+    console.log("Todo bien");
+  }
+  pruebasincorrecto(){
+    console.log("Sin datos");
   }
 
 }
