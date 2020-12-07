@@ -4,6 +4,7 @@ import { EditarSesionComponent } from './editar-sesion.component';
 import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClientTestingModule} from '@angular/common/http/testing';
 
+import { MatDialogModule, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 describe('EditarSesionComponent', () => {
     let component: EditarSesionComponent;
   let fixture: ComponentFixture<EditarSesionComponent>;
@@ -11,8 +12,9 @@ describe('EditarSesionComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
         imports: [
-            HttpClientTestingModule,
-            RouterTestingModule
+          HttpClientTestingModule,
+          RouterTestingModule,
+          MatDialogModule 
         ],
       declarations: [ EditarSesionComponent ]
     })
@@ -28,4 +30,5 @@ describe('EditarSesionComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  
 });

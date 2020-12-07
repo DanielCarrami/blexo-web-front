@@ -23,6 +23,7 @@ export class EditarSesionComponent implements OnInit {
   }
 
   editarsesion(){
+    this.confirmarprueba();
     console.log(this.sesion)
     this.crudService.update(Model.SESION,2,this.sesion)
     .then(res => {
@@ -37,8 +38,18 @@ export class EditarSesionComponent implements OnInit {
     })
   }
 
+  comprobacion(){
+    if (this.sesion.nombre != ''){
+      
+    }
+  }
+
   errorprueba(){
     console.log("Error en forma");
+  }
+
+  confirmarprueba(){
+    console.log("todo bien");
   }
 
 }
