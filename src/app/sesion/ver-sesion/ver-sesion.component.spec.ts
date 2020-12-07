@@ -55,4 +55,22 @@ describe('VerSesionComponent', () => {
     el.click();
     expect(component.crearExperimento).toHaveBeenCalled();
   });
+
+  it('Edad should Show the proper info', () => {
+    fixture.detectChanges();
+    let el = fixture.debugElement.nativeElement.querySelector('#edad_text');
+    expect(el).not.toBe('');
+  });
+
+  it('Name should Show the proper info', () => {
+    fixture.detectChanges();
+    let el = fixture.debugElement.nativeElement.querySelector('#nombre_text');
+    expect(el).not.toBe('');
+  });
+
+  it('Descripcion should Show the proper info', () => {
+    fixture.detectChanges();
+    let el = fixture.debugElement.nativeElement.querySelector('#descripcion_text');
+    expect(el).not.toBe('');
+  });
 });
