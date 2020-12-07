@@ -43,8 +43,10 @@ export class InicioSesionComponent implements OnInit {
     });
     if (this.auth.isLoggedIn()){ 
       this.router.navigate(['/proyecto']); 
+      
     }else{
       console.log("No se encontró ningun token");
+      
     }
     
   }
