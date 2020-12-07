@@ -29,4 +29,35 @@ describe('InicioSesionComponent', () => {
         expect(component).toBeTruthy();
     });
 
+    it('email should not be empty', () => {
+        component.email.setValue('');
+        expect(component.email.invalid).toBeTruthy();
+    });
+    
+    it('email should have @', () => {
+    component.email.setValue('prueba.com');
+    expect(component.email.invalid).toBeTruthy();
+    });
+    
+    it('email should have a dot', () => {
+        component.email.setValue('prueba@hotmailcom');
+        expect(component.email.valid).toBeTruthy();
+    });
+    
+    it('email should have something after the dot', () => {
+        component.email.setValue('prueba@hotmail.');
+        expect(component.email.invalid).toBeTruthy();
+    });
+    
+    it('email should be valid', () => {
+        component.email.setValue('prueba@hotmail.com');
+        expect(component.email.valid).toBeTruthy();
+    });
+
+    it('the password should be hidden', () => {
+        expect(component.hide).toEqual(true);
+    });
+
+    
+    
 });

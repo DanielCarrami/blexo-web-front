@@ -19,6 +19,7 @@ export class RegistroComponent implements OnInit {
   email = new FormControl('', [Validators.required, Validators.email]);
   hide = true;
   hideconfirm = true;
+  check = false;
 
   constructor(
     private auth: AuthService, 
@@ -53,9 +54,10 @@ export class RegistroComponent implements OnInit {
    }
 
    checkPasswords() { 
-    this.password.value === this.confirmpassword.value ? 'Las contraseñas no coinciden' : '';    
-    this.auth.registro('', this.name.value, this.lastname.value, this.email.value, 
-      this.password.value, this.password.value).then(
+    this.check = this.password.value === this.confirmpassword.value ? true : false; 
+    if(this.check){
+      this.auth.registro('', this.name.value, this.lastname.value, this.email.value, 
+        this.password.value, this.password.value).then(
         res => {
           if(res.data.email){
             this.auth.login(res.data.email, this.password.value)
@@ -73,6 +75,9 @@ export class RegistroComponent implements OnInit {
           }
         }
       ).catch(err => console.error(err));
+    }
+    else{console.log('Errooooooooor')}
+    return this.check;
   }
 
 
