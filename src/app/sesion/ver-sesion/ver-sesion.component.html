@@ -6,12 +6,12 @@
   <br><br>
   
     <mat-card>
-      <mat-card-title>{{sesiones.nombre}}</mat-card-title><br>
+      <mat-card-title id= "nombre_text">{{sesiones.nombre}}</mat-card-title><br>
         <mat-card-content style="margin-left: 15px;">
           <p style="font-weight: bold;">Descripcion:</p>
-          <p>{{sesiones.descripcion}}</p>
+          <p id= "descripcion_text">{{sesiones.descripcion}}</p>
           <p style="font-weight: bold;">Edad:</p>
-          <p>{{sesiones.edad}} años</p>
+          <p id= "edad_text">{{sesiones.edad}}</p> <p> años</p>
           <p style="font-weight: bold;">Sexo:</p>
           <div *ngIf="sesiones.sexo == 'M';else elseBlock">
             <p>Masculino</p>
