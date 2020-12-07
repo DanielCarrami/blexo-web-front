@@ -37,4 +37,8 @@ export class EditarSesionComponent implements OnInit {
     })
   }
 
+  errorprueba(){
+    console.log("Error en forma");
+  }
+
 }
