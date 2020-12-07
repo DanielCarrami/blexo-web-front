@@ -8,10 +8,16 @@ import { MatInputModule } from '@angular/material/input';
 import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClientTestingModule} from '@angular/common/http/testing';
 
+import { EditarSesionComponent } from '../editar-sesion/editar-sesion.component';
+import { ELOOP } from 'constants';
+import { DebugElement } from '@angular/core';
+
+import { By } from '@angular/platform-browser'
 describe('VerSesionComponent', () => {
   let dialog:MatDialog;
   let component: VerSesionComponent;
   let fixture: ComponentFixture<VerSesionComponent>;
+  let de: DebugElement;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -32,5 +38,39 @@ describe('VerSesionComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should popup', () => {
+    fixture.detectChanges();
+    spyOn(component, "popup");
+    let el = fixture.debugElement.nativeElement.querySelector('button');
+    el.click();
+    expect(component.popup).toHaveBeenCalled();
+  });
+
+  it('should Create Experiment', () => {
+    fixture.detectChanges();
+    spyOn(component, "crearExperimento");
+    let el = fixture.debugElement.nativeElement.querySelector('#boton1');
+    el.click();
+    expect(component.crearExperimento).toHaveBeenCalled();
+  });
+
+  it('Edad should Show the proper info', () => {
+    fixture.detectChanges();
+    let el = fixture.debugElement.nativeElement.querySelector('#edad_text');
+    expect(el).not.toBe('');
+  });
+
+  it('Name should Show the proper info', () => {
+    fixture.detectChanges();
+    let el = fixture.debugElement.nativeElement.querySelector('#nombre_text');
+    expect(el).not.toBe('');
+  });
+
+  it('Descripcion should Show the proper info', () => {
+    fixture.detectChanges();
+    let el = fixture.debugElement.nativeElement.querySelector('#descripcion_text');
+    expect(el).not.toBe('');
   });
 });
