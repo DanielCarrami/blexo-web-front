@@ -30,4 +30,30 @@ describe('MisProyectosComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should Create Project', () => {
+    fixture.detectChanges();
+    spyOn(component, "nuevoProyecto");
+    let el = fixture.debugElement.nativeElement.querySelector('#boton');
+    el.click();
+    expect(component.nuevoProyecto).toHaveBeenCalled();
+  });
+
+  it('Project name should Show the proper info', () => {
+    fixture.detectChanges();
+    let el = fixture.debugElement.nativeElement.querySelector('#nombre');
+    expect(el).not.toBe('');
+  });
+
+  it('Descripcion should Show the proper info', () => {
+    fixture.detectChanges();
+    let el = fixture.debugElement.nativeElement.querySelector('#descripcion');
+    expect(el).not.toBe('');
+  });
+
+  it('Fecha should Show the proper info', () => {
+    fixture.detectChanges();
+    let el = fixture.debugElement.nativeElement.querySelector('#fecha_inicio');
+    expect(el).not.toBe('');
+  });
 });
